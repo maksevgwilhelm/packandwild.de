@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Van Life Essentials — PackAndWild</title>
+  <meta name="description" content="Curated van life gear: portable power stations, fridges, awnings, and sleep systems for life on the road.">
+  <link rel="canonical" href="https://packandwild.de/vanlife/">
+  <link rel="alternate" hreflang="en" href="https://packandwild.de/vanlife/">
+  <link rel="alternate" hreflang="de" href="https://packandwild.de/de/vanlife/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--forest:#1B2B1F;--forest-deep:#131F16;--forest-mid:#243728;--sage:#4A6741;--sage-light:#6A9460;--cream:#F4EFE6;--cream-dark:#EBE5DB;--white:#FAFAF8;--slate:#5C6B7A;--bark:#8B6347;--bark-light:#9E7259;--font-display:'Playfair Display',Georgia,serif;--font-body:'Inter',system-ui,sans-serif;--radius-sm:4px;--radius-md:8px;--transition:.22s ease;--max-w:1200px;--nav-h:68px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);background:var(--cream);color:var(--forest);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}img{max-width:100%;display:block}ul{list-style:none}button{font-family:var(--font-body);cursor:pointer}
+    html[data-lang="en"] [lang="de"]{display:none!important}html[data-lang="de"] [lang="en"]{display:none!important}
+    .container{max-width:var(--max-w);margin:0 auto;padding:0 2rem}
+    @media(max-width:600px){.container{padding:0 1.25rem}}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.875rem 1.75rem;font-size:.875rem;font-weight:600;letter-spacing:.02em;border-radius:var(--radius-sm);border:none;transition:all var(--transition);white-space:nowrap;cursor:pointer}
+    .btn--primary{background:var(--bark);color:var(--white)}.btn--primary:hover{background:var(--bark-light);transform:translateY(-1px)}
+    .btn--ghost{background:transparent;color:var(--cream);border:1px solid rgba(244,239,230,.25)}.btn--ghost:hover{border-color:rgba(244,239,230,.6)}
+    .nav{position:sticky;top:0;z-index:200;height:var(--nav-h);background:var(--forest);display:flex;align-items:center;box-shadow:0 1px 0 rgba(255,255,255,.04)}
+    .nav__inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--max-w);margin:0 auto;padding:0 2rem;gap:1.5rem}
+    .nav__logo{font-family:var(--font-display);font-size:1.35rem;font-weight:700;color:var(--cream);letter-spacing:-.02em;flex-shrink:0}
+    .nav__logo-accent{color:var(--sage-light)}
+    .nav__links{display:flex;align-items:center;gap:.25rem}
+    .nav__links a{padding:.4rem .75rem;font-size:.82rem;font-weight:500;color:rgba(244,239,230,.65);border-radius:var(--radius-sm);transition:all var(--transition)}
+    .nav__links a:hover,.nav__links a.is-current{color:var(--cream);background:rgba(255,255,255,.05)}
+    .nav__links a.is-current{color:var(--sage-light)}
+    .nav__right{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
+    .lang-pill{display:flex;align-items:center;background:rgba(255,255,255,.07);border-radius:100px;padding:3px;gap:2px}
+    .lang-pill__btn{background:none;border:none;color:rgba(244,239,230,.45);font-size:.72rem;font-weight:700;letter-spacing:.06em;padding:.3rem .65rem;border-radius:100px;transition:all var(--transition)}
+    .lang-pill__btn.is-active{background:var(--sage);color:#fff}
+    .nav__hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px}
+    .nav__hamburger span{display:block;width:22px;height:1.5px;background:rgba(244,239,230,.7);border-radius:2px}
+    .nav__drawer{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--forest-mid);padding:1rem 2rem 1.5rem;border-top:1px solid rgba(255,255,255,.06);z-index:199;box-shadow:0 12px 32px rgba(0,0,0,.3)}
+    .nav__drawer.is-open{display:block}
+    .nav__drawer a{display:block;padding:.75rem 0;font-size:.95rem;font-weight:500;color:rgba(244,239,230,.75);border-bottom:1px solid rgba(255,255,255,.06);transition:color var(--transition)}
+    .nav__drawer a:hover{color:var(--cream)}
+    @media(max-width:900px){.nav__links{display:none}.nav__hamburger{display:flex}}
+    @media(max-width:600px){.nav__inner{padding:0 1.25rem}}
+    .page-banner{background:var(--forest);padding:4.5rem 0 3.5rem;position:relative;overflow:hidden}
+    .page-banner__topo{position:absolute;inset:0;pointer-events:none}
+    .page-banner__inner{position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+    .breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:rgba(244,239,230,.4);font-weight:500;margin-bottom:1rem}
+    .breadcrumb a{color:rgba(244,239,230,.4);transition:color var(--transition)}.breadcrumb a:hover{color:var(--sage-light)}
+    .page-banner__eyebrow{font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-light);margin-bottom:.625rem}
+    .page-banner__title{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,3.5rem);font-weight:700;color:var(--cream);line-height:1.1;letter-spacing:-.03em;margin-bottom:.75rem}
+    .page-banner__sub{font-size:1rem;color:rgba(244,239,230,.6);max-width:500px;font-weight:300;line-height:1.65}
+    .page-banner__stat{display:flex;flex-direction:column;align-items:flex-end;gap:.25rem;flex-shrink:0}
+    .page-banner__stat-num{font-family:var(--font-display);font-size:3rem;font-weight:700;color:var(--sage-light);line-height:1}
+    .page-banner__stat-label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,239,230,.35)}
+    @media(max-width:600px){.page-banner__stat{display:none}}
+    .disclosure-bar{background:rgba(27,43,31,.04);border-top:1px solid rgba(27,43,31,.07);border-bottom:1px solid rgba(27,43,31,.07);padding:.875rem 0}
+    .disclosure-bar p{font-size:.76rem;color:var(--slate);line-height:1.5;text-align:center}
+    .disclosure-bar a{color:var(--sage);text-decoration:underline;text-underline-offset:2px}
+    .intro-section{padding:3.5rem 0 2.5rem;border-bottom:1px solid rgba(27,43,31,.07)}
+    .intro-section__inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+    @media(max-width:700px){.intro-section__inner{grid-template-columns:1fr;gap:1.5rem}}
+    .intro-section__lead{font-family:var(--font-display);font-size:1.5rem;font-style:italic;font-weight:400;color:var(--forest);line-height:1.5}
+    .intro-section__body{font-size:.95rem;color:var(--slate);line-height:1.75;font-weight:300}
+    .intro-section__body p+p{margin-top:1rem}
+    .intro-section__tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.25rem}
+    .tag{padding:.3rem .75rem;background:rgba(74,103,65,.1);color:var(--sage);font-size:.75rem;font-weight:600;letter-spacing:.05em;border-radius:100px}
+    .merchants-strip{background:var(--white);padding:2rem 0;border-bottom:1px solid rgba(27,43,31,.07)}
+    .merchants-strip__inner{display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+    .merchants-strip__label{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(27,43,31,.35);flex-shrink:0}
+    .merchants-strip__list{display:flex;flex-wrap:wrap;gap:.625rem}
+    .merchant-pill{padding:.35rem 1rem;border:1px solid rgba(27,43,31,.12);border-radius:100px;font-size:.78rem;font-weight:600;color:var(--slate);transition:all var(--transition)}
+    .merchant-pill:hover{border-color:var(--sage);color:var(--sage);background:rgba(74,103,65,.05)}
+    .products-section{padding:3rem 0 4rem}
+    .products-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
+    .section-label{display:block;font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:.4rem}
+    .section-title{font-family:var(--font-display);font-size:clamp(1.5rem,2.5vw,2.1rem);font-weight:700;line-height:1.2;letter-spacing:-.02em}
+    .product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+    @media(max-width:700px){.product-grid{grid-template-columns:1fr}}
+    .prod-card{background:var(--white);border-radius:var(--radius-md);border:1px solid rgba(27,43,31,.07);display:flex;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease}
+    .prod-card:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(27,43,31,.1)}
+    .prod-card__thumb{width:200px;min-width:200px;background:var(--cream-dark);position:relative;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    @media(max-width:500px){.prod-card{flex-direction:column}.prod-card__thumb{width:100%;min-width:auto;height:180px}}
+    .prod-card__placeholder{font-size:3.5rem;opacity:.28}
+    .weight-badge{position:absolute;top:10px;right:10px;background:var(--forest);color:var(--cream);font-size:.67rem;font-weight:700;padding:.22rem .6rem;border-radius:100px;letter-spacing:.05em;display:flex;align-items:center;gap:.2rem}
+    .weight-badge::before{content:'↓';font-size:.58rem;opacity:.65}
+    .merchant-badge{position:absolute;bottom:10px;left:10px;background:rgba(255,255,255,.9);color:var(--forest);font-size:.62rem;font-weight:700;padding:.2rem .55rem;border-radius:100px}
+    .prod-card__body{padding:1.375rem 1.5rem;display:flex;flex-direction:column;flex:1}
+    .prod-card__meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem}
+    .prod-card__brand{font-size:.67rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sage)}
+    .prod-card__rating{display:flex;align-items:center;gap:.25rem;font-size:.75rem;color:var(--bark);font-weight:600}
+    .prod-card__name{font-family:var(--font-display);font-size:1.15rem;font-weight:500;color:var(--forest);line-height:1.25;margin-bottom:.5rem}
+    .prod-card__tagline{font-size:.8rem;font-weight:600;color:var(--slate);font-style:italic;margin-bottom:.5rem}
+    .prod-card__desc{font-size:.84rem;color:var(--slate);line-height:1.6;flex:1;margin-bottom:1rem}
+    .prod-card__highlights{display:flex;flex-wrap:wrap;gap:.375rem;margin-bottom:1rem}
+    .highlight{font-size:.72rem;font-weight:500;padding:.2rem .6rem;border-radius:4px;letter-spacing:.03em}
+    .highlight--pro{background:rgba(74,103,65,.1);color:var(--sage)}.highlight--con{background:rgba(92,107,122,.1);color:var(--slate)}
+    .prod-card__footer{display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap}
+    .prod-card__price-info{font-size:.75rem;color:var(--slate)}
+    .prod-card__cta{display:inline-flex;align-items:center;gap:.4rem;padding:.65rem 1.125rem;background:var(--forest);color:var(--cream);font-size:.82rem;font-weight:600;border-radius:var(--radius-sm);transition:background var(--transition)}
+    .prod-card__cta:hover{background:var(--sage)}
+    .why-section{background:var(--forest);padding:5rem 0;position:relative;overflow:hidden}
+    .why-section__topo{position:absolute;inset:0;pointer-events:none}
+    .why-section__inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.6fr;gap:5rem;align-items:start}
+    @media(max-width:800px){.why-section__inner{grid-template-columns:1fr;gap:2.5rem}}
+    .why-section__label{font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-light);margin-bottom:.75rem}
+    .why-section__title{font-family:var(--font-display);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:var(--cream);line-height:1.2;letter-spacing:-.02em;margin-bottom:1.5rem}
+    .why-section__text{font-size:.95rem;color:rgba(244,239,230,.55);line-height:1.75;font-weight:300}
+    .why-section__text p+p{margin-top:1rem}
+    .why-criteria{display:flex;flex-direction:column;gap:1.5rem}
+    .criterion{display:flex;gap:1.25rem;align-items:flex-start}
+    .criterion__num{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--sage-light);line-height:1;flex-shrink:0;min-width:2rem}
+    .criterion__title{font-size:.9rem;font-weight:600;color:var(--cream);margin-bottom:.3rem}
+    .criterion__desc{font-size:.84rem;color:rgba(244,239,230,.5);line-height:1.6;font-weight:300}
+    .footer{background:var(--forest-deep);padding:3.5rem 0 2rem}
+    .footer__top{display:grid;grid-template-columns:1fr 2fr;gap:4rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:1.5rem}
+    @media(max-width:700px){.footer__top{grid-template-columns:1fr;gap:2rem}}
+    .footer__brand-logo{font-family:var(--font-display);font-size:1.35rem;font-weight:700;color:var(--cream);letter-spacing:-.02em;margin-bottom:.625rem}
+    .footer__brand-logo span{color:var(--sage-light)}
+    .footer__brand-tagline{font-size:.82rem;color:rgba(244,239,230,.35);line-height:1.6;max-width:220px}
+    .footer__nav-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+    @media(max-width:500px){.footer__nav-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}}
+    .footer__nav-title{font-size:.66rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:rgba(244,239,230,.3);margin-bottom:.875rem}
+    .footer__nav-links{display:flex;flex-direction:column;gap:.5rem}
+    .footer__nav-links a{font-size:.85rem;color:rgba(244,239,230,.5);transition:color var(--transition)}.footer__nav-links a:hover{color:var(--cream)}
+    .footer__disclosure{font-size:.76rem;color:rgba(244,239,230,.32);line-height:1.65;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,.05);margin-bottom:1.5rem}
+    .footer__bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem}
+    .footer__copy{font-size:.76rem;color:rgba(244,239,230,.28)}
+    .footer__legal{display:flex;gap:1.5rem}
+    .footer__legal a{font-size:.76rem;color:rgba(244,239,230,.32);transition:color var(--transition)}.footer__legal a:hover{color:rgba(244,239,230,.7)}
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">Pack<span class="nav__logo-accent">&</span>Wild</a>
+      <nav class="nav__links">
+        <a href="/hiking/" lang="en">Hiking</a><a href="/de/wandern/" lang="de">Wandern</a>
+        <a href="/vanlife/" class="is-current" lang="en" aria-current="page">Van Life</a><a href="/de/vanlife/" class="is-current" lang="de" aria-current="page">Van Life</a>
+        <a href="/camping/" lang="en">Camping</a><a href="/de/camping/" lang="de">Camping</a>
+        <a href="/edc/">EDC</a>
+        <a href="/travel/" lang="en">Travel</a><a href="/de/reisen/" lang="de">Reisen</a>
+        <a href="/home/" lang="en">Home</a><a href="/de/zuhause/" lang="de">Zuhause</a>
+      </nav>
+      <div class="nav__right">
+        <div class="lang-pill"><button class="lang-pill__btn is-active" id="btn-en" onclick="setLang('en')">EN</button><button class="lang-pill__btn" id="btn-de" onclick="setLang('de')">DE</button></div>
+        <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="nav__drawer" id="nav-drawer">
+      <a href="/hiking/"><span lang="en">Hiking</span><span lang="de">Wandern</span></a>
+      <a href="/vanlife/">Van Life</a>
+      <a href="/camping/">Camping</a>
+      <a href="/edc/">EDC</a>
+      <a href="/travel/"><span lang="en">Travel</span><span lang="de">Reisen</span></a>
+      <a href="/home/"><span lang="en">Home</span><span lang="de">Zuhause</span></a>
+      <a href="/about/"><span lang="en">About</span><span lang="de">Über uns</span></a>
+    </nav>
+  </header>
+
+  <section class="page-banner">
+    <svg class="page-banner__topo" viewBox="0 0 1440 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1.2">
+        <path d="M -80,80 C 200,50 500,100 800,72 C 1100,44 1320,88 1520,70"/>
+        <path d="M -80,130 C 200,102 520,150 820,124 C 1120,98 1340,140 1520,122"/>
+        <path d="M -80,180 C 220,154 540,200 840,176 C 1140,152 1350,192 1520,174"/>
+        <path d="M -80,228 C 240,204 560,248 860,226 C 1160,204 1360,240 1520,224"/>
+      </g>
+    </svg>
+    <div class="container">
+      <div class="page-banner__inner">
+        <div>
+          <nav class="breadcrumb"><a href="/">PackAndWild</a><span>›</span><span lang="en">Van Life</span><span lang="de">Van Life</span></nav>
+          <div class="page-banner__eyebrow"><span lang="en">Gear Guide</span><span lang="de">Ausrüstungsguide</span></div>
+          <h1 class="page-banner__title">Van Life</h1>
+          <p class="page-banner__sub">
+            <span lang="en">Power, cooling, cooking, and sleep systems for those who live and travel on the road — without compromise.</span>
+            <span lang="de">Strom, Kühlung, Kochen und Schlafsysteme für alle, die auf der Straße leben und reisen — ohne Kompromisse.</span>
+          </p>
+        </div>
+        <div class="page-banner__stat"><span class="page-banner__stat-num">6</span><span class="page-banner__stat-label" lang="en">Curated Picks</span><span class="page-banner__stat-label" lang="de">Kuratierte Picks</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="disclosure-bar">
+    <div class="container">
+      <p lang="en"><strong>Affiliate Disclosure:</strong> PackAndWild uses affiliate links. We may earn a small commission on purchases — at no extra cost to you. <a href="/about/#disclosure">Learn more</a></p>
+      <p lang="de"><strong>Affiliate-Hinweis:</strong> PackAndWild verwendet Affiliate-Links. Beim Kauf erhalten wir eine kleine Provision — ohne Mehrkosten für dich. <a href="/de/ueber-uns/#disclosure">Mehr erfahren</a></p>
+    </div>
+  </div>
+
+  <div class="intro-section">
+    <div class="container">
+      <div class="intro-section__inner">
+        <div>
+          <p class="intro-section__lead">
+            <span lang="en">"Home is where you park it."</span>
+            <span lang="de">„Zuhause ist da, wo du parkst."</span>
+          </p>
+          <div class="intro-section__tags"><span class="tag">Portable Power</span><span class="tag">Off-Grid</span><span class="tag">12V</span><span class="tag" lang="en">Road Life</span><span class="tag" lang="de">Roadlife</span></div>
+        </div>
+        <div class="intro-section__body">
+          <p lang="en">Van life is about freedom — but freedom requires the right infrastructure. Reliable power, temperature-controlled food storage, and a comfortable sleep setup are non-negotiables. Get those three right and the rest falls into place.</p>
+          <p lang="en">Our picks focus on gear that works for full-time van dwellers and weekend warriors alike: power stations that can handle a week off-grid, compressor fridges that run on minimal draw, and sleep systems that actually let you rest.</p>
+          <p lang="de">Van Life steht für Freiheit — aber Freiheit erfordert die richtige Infrastruktur. Zuverlässiger Strom, temperaturkontrollierte Lebensmittellagerung und ein komfortables Schlafsystem sind nicht verhandelbar. Wer diese drei im Griff hat, dem fällt der Rest leicht.</p>
+          <p lang="de">Unsere Auswahl richtet sich an Vollzeit-Van-Lifer und Wochenend-Ausreißer: Powerstations für eine Woche Off-Grid, Kompressorkühlboxen mit minimalem Stromverbrauch und Schlafsysteme, die echte Erholung bringen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="merchants-strip">
+    <div class="container">
+      <div class="merchants-strip__inner">
+        <span class="merchants-strip__label" lang="en">Shop at</span><span class="merchants-strip__label" lang="de">Kaufen bei</span>
+        <div class="merchants-strip__list">
+          <a href="#" class="merchant-pill" rel="nofollow">EcoFlow</a>
+          <a href="#" class="merchant-pill" rel="nofollow">Jackery</a>
+          <a href="#" class="merchant-pill" rel="nofollow">Fritz Berger</a>
+          <a href="#" class="merchant-pill" rel="nofollow">Bikepacking Adventure</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="products-section">
+    <div class="container">
+      <div class="products-header">
+        <div>
+          <span class="section-label"><span lang="en">Our Picks</span><span lang="de">Unsere Picks</span></span>
+          <h2 class="section-title"><span lang="en">Best Van Life Gear</span><span lang="de">Beste Van-Life-Ausrüstung</span></h2>
+        </div>
+      </div>
+      <div class="product-grid">
+
+        <article class="prod-card">
+          <div class="prod-card__thumb">
+            <span class="prod-card__placeholder">⚡</span>
+            <span class="weight-badge">12 kg</span>
+            <span class="merchant-badge">EcoFlow</span>
+          </div>
+          <div class="prod-card__body">
+            <div class="prod-card__meta"><span class="prod-card__brand">EcoFlow</span><span class="prod-card__rating">★★★★★</span></div>
+            <div class="prod-card__name">DELTA 2</div>
+            <p class="prod-card__tagline"><span lang="en">1024Wh — the van life power backbone.</span><span lang="de">1024Wh — das Rückgrat jeder Van-Stromversorgung.</span></p>
+            <p class="prod-card__desc">
+              <span lang="en">1024Wh capacity, 1800W AC output (2700W surge). Charges to 80% in 50 min via X-Stream. Runs a fridge for 20+ hours, laptop for days. Expandable with extra battery to 2048Wh. The benchmark portable power station.</span>
+              <span lang="de">1024Wh Kapazität, 1800W AC-Ausgang (2700W Spitze). Lädt per X-Stream in 50 Min auf 80%. Betreibt eine Kühlbox 20+ Stunden, Laptop tagelang. Mit Zusatzakku auf 2048Wh erweiterbar.</span>
+            </p>
+            <div class="prod-card__highlights">
+              <span class="highlight highlight--pro" lang="en">✓ X-Stream fast charge</span><span class="highlight highlight--pro" lang="de">✓ X-Stream Schnellladen</span>
+              <span class="highlight highlight--pro" lang="en">✓ Expandable</span><span class="highlight highlight--pro" lang="de">✓ Erweiterbar</span>
+              <span class="highlight highlight--con" lang="en">– 12 kg weight</span><span class="highlight highlight--con" lang="de">– 12 kg Gewicht</span>
+            </div>
+            <div class="prod-card__footer">
+              <span class="prod-card__price-info" lang="en">From ~€799 · EcoFlow</span><span class="prod-card__price-info" lang="de">Ab ~799 € · EcoFlow</span>
+              <a href="#" class="prod-card__cta" rel="nofollow sponsored"><span lang="en">View Deal →</span><span lang="de">Angebot →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="prod-card">
+          <div class="prod-card__thumb">
+            <span class="prod-card__placeholder">🔋</span>
+            <span class="weight-badge">6.4 kg</span>
+            <span class="merchant-badge">Jackery</span>
+          </div>
+          <div class="prod-card__body">
+            <div class="prod-card__meta"><span class="prod-card__brand">Jackery</span><span class="prod-card__rating">★★★★☆</span></div>
+            <div class="prod-card__name">Explorer 500</div>
+            <p class="prod-card__tagline"><span lang="en">500Wh compact power for weekend warriors.</span><span lang="de">500Wh kompakte Energie für Wochenendabenteurer.</span></p>
+            <p class="prod-card__desc">
+              <span lang="en">518Wh capacity, 500W pure sine wave inverter. 3 USB ports, 2 AC outlets, 12V car port. Quieter and more portable than generators. Charges via solar, wall, or 12V car outlet. Ideal entry-level van power station.</span>
+              <span lang="de">518Wh Kapazität, 500W reiner Sinuswechselrichter. 3 USB-Ports, 2 AC-Ausgänge, 12V-Autoanschluss. Leiser und portabler als Generatoren. Lädt per Solar, Steckdose oder 12V.</span>
+            </p>
+            <div class="prod-card__highlights">
+              <span class="highlight highlight--pro" lang="en">✓ Very portable</span><span class="highlight highlight--pro" lang="de">✓ Sehr portabel</span>
+              <span class="highlight highlight--pro" lang="en">✓ Solar compatible</span><span class="highlight highlight--pro" lang="de">✓ Solar-kompatibel</span>
+              <span class="highlight highlight--con" lang="en">– No fast charging</span><span class="highlight highlight--con" lang="de">– Kein Schnellladen</span>
+            </div>
+            <div class="prod-card__footer">
+              <span class="prod-card__price-info" lang="en">From ~€449 · Jackery</span><span class="prod-card__price-info" lang="de">Ab ~449 € · Jackery</span>
+              <a href="#" class="prod-card__cta" rel="nofollow sponsored"><span lang="en">View Deal →</span><span lang="de">Angebot →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="prod-card">
+          <div class="prod-card__thumb">
+            <span class="prod-card__placeholder">❄️</span>
+            <span class="weight-badge">10.5 kg</span>
+            <span class="merchant-badge">Fritz Berger</span>
+          </div>
+          <div class="prod-card__body">
+            <div class="prod-card__meta"><span class="prod-card__brand">Dometic</span><span class="prod-card__rating">★★★★★</span></div>
+            <div class="prod-card__name">CFX3 35</div>
+            <p class="prod-card__tagline"><span lang="en">The 12V compressor fridge van lifers swear by.</span><span lang="de">Die 12V-Kompressorkühlbox für ernsthafte Van Lifer.</span></p>
+            <p class="prod-card__desc">
+              <span lang="en">35L capacity, cools to -22°C. Variable-speed compressor draws as little as 1A on eco mode. App-controlled via WiFi/Bluetooth. Handles 45° ambient temp without performance loss. The most reliable 12V cooling on the market.</span>
+              <span lang="de">35L Fassungsvermögen, kühlt bis -22°C. Drehzahlvariabler Kompressor zieht im Eco-Modus nur 1A. App-gesteuert per WLAN/Bluetooth. Hält bis 45°C Umgebungstemperatur stand.</span>
+            </p>
+            <div class="prod-card__highlights">
+              <span class="highlight highlight--pro" lang="en">✓ Down to -22°C</span><span class="highlight highlight--pro" lang="de">✓ Bis -22°C</span>
+              <span class="highlight highlight--pro" lang="en">✓ Low power draw</span><span class="highlight highlight--pro" lang="de">✓ Niedriger Stromverbrauch</span>
+              <span class="highlight highlight--con" lang="en">– Premium price</span><span class="highlight highlight--con" lang="de">– Premium-Preis</span>
+            </div>
+            <div class="prod-card__footer">
+              <span class="prod-card__price-info" lang="en">From ~€649 · Fritz Berger</span><span class="prod-card__price-info" lang="de">Ab ~649 € · Fritz Berger</span>
+              <a href="#" class="prod-card__cta" rel="nofollow sponsored"><span lang="en">View Deal →</span><span lang="de">Angebot →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="prod-card">
+          <div class="prod-card__thumb">
+            <span class="prod-card__placeholder">☀️</span>
+            <span class="weight-badge">4.2 kg</span>
+            <span class="merchant-badge">EcoFlow</span>
+          </div>
+          <div class="prod-card__body">
+            <div class="prod-card__meta"><span class="prod-card__brand">EcoFlow</span><span class="prod-card__rating">★★★★★</span></div>
+            <div class="prod-card__name">220W Bifacial Solar Panel</div>
+            <p class="prod-card__tagline"><span lang="en">Charges from both sides. Double the efficiency.</span><span lang="de">Lädt von beiden Seiten. Doppelte Effizienz.</span></p>
+            <p class="prod-card__desc">
+              <span lang="en">220W output with bifacial cells — absorbs reflected light from the ground too. Foldable, kickstand-included, waterproof to IP68. Pairs perfectly with DELTA 2 for a self-sufficient van setup.</span>
+              <span lang="de">220W mit bifazialen Zellen — absorbiert auch reflektiertes Bodenlicht. Faltbar, mit Ständer, wasserdicht nach IP68. Perfekte Ergänzung zur DELTA 2 für ein autarkes Van-Setup.</span>
+            </p>
+            <div class="prod-card__highlights">
+              <span class="highlight highlight--pro" lang="en">✓ Bifacial cells</span><span class="highlight highlight--pro" lang="de">✓ Bifaziale Zellen</span>
+              <span class="highlight highlight--pro" lang="en">✓ IP68 waterproof</span><span class="highlight highlight--pro" lang="de">✓ IP68 wasserdicht</span>
+              <span class="highlight highlight--con" lang="en">– Needs direct sun</span><span class="highlight highlight--con" lang="de">– Braucht direkte Sonne</span>
+            </div>
+            <div class="prod-card__footer">
+              <span class="prod-card__price-info" lang="en">From ~€299 · EcoFlow</span><span class="prod-card__price-info" lang="de">Ab ~299 € · EcoFlow</span>
+              <a href="#" class="prod-card__cta" rel="nofollow sponsored"><span lang="en">View Deal →</span><span lang="de">Angebot →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="prod-card">
+          <div class="prod-card__thumb">
+            <span class="prod-card__placeholder">🛏️</span>
+            <span class="weight-badge">810 g</span>
+            <span class="merchant-badge">Fritz Berger</span>
+          </div>
+          <div class="prod-card__body">
+            <div class="prod-card__meta"><span class="prod-card__brand">Therm-a-Rest</span><span class="prod-card__rating">★★★★☆</span></div>
+            <div class="prod-card__name">MondoKing 3D Regular</div>
+            <p class="prod-card__tagline"><span lang="en">Self-inflating comfort for van floor setups.</span><span lang="de">Selbstaufblasender Komfort für Van-Boden-Setups.</span></p>
+            <p class="prod-card__desc">
+              <span lang="en">R-value 8.0 — warm enough for any season. 3D baffled construction prevents rolling off. Self-inflates in 5 minutes. At 7.5cm thick, it's the closest thing to a real mattress in a lightweight package.</span>
+              <span lang="de">R-Wert 8,0 — warm genug für jede Saison. 3D-Versteifungsstruktur verhindert Abrollen. Selbstaufblasend in 5 Minuten. 7,5 cm dick — so nah wie möglich an einer echten Matratze.</span>
+            </p>
+            <div class="prod-card__highlights">
+              <span class="highlight highlight--pro" lang="en">✓ R-value 8.0</span><span class="highlight highlight--pro" lang="de">✓ R-Wert 8,0</span>
+              <span class="highlight highlight--pro" lang="en">✓ 7.5 cm thick</span><span class="highlight highlight--pro" lang="de">✓ 7,5 cm dick</span>
+              <span class="highlight highlight--con" lang="en">– Bulky packed</span><span class="highlight highlight--con" lang="de">– Groß zusammengerollt</span>
+            </div>
+            <div class="prod-card__footer">
+              <span class="prod-card__price-info" lang="en">From ~€185 · Fritz Berger</span><span class="prod-card__price-info" lang="de">Ab ~185 € · Fritz Berger</span>
+              <a href="#" class="prod-card__cta" rel="nofollow sponsored"><span lang="en">View Deal →</span><span lang="de">Angebot →</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="prod-card">
+          <div class="prod-card__thumb">
+            <span class="prod-card__placeholder">🏕️</span>
+            <span class="weight-badge">3.8 kg</span>
+            <span class="merchant-badge">Fritz Berger</span>
+          </div>
+          <div class="prod-card__body">
+            <div class="prod-card__meta"><span class="prod-card__brand">Dometic</span><span class="prod-card__rating">★★★★☆</span></div>
+            <div class="prod-card__name">Drive Awning FTX 4x2.5m</div>
+            <p class="prod-card__tagline"><span lang="en">10 m² of shade. Sets up in under 2 minutes.</span><span lang="de">10 m² Schatten. Aufgebaut in unter 2 Minuten.</span></p>
+            <p class="prod-card__desc">
+              <span lang="en">Roof-mounted roll-out awning, 4m wide × 2.5m projection. UV50+ canopy, adjustable pitch poles, 3-point mounting. Weatherproof to 50 km/h wind. Compatible with most high-roof vans and campers.</span>
+              <span lang="de">Dachmontiertes Ausrollvordach, 4m breit × 2,5m Auszug. UV50+ Markise, verstellbare Stützstangen, 3-Punkt-Montage. Wetterfest bis 50 km/h Wind. Passt auf die meisten Hochdach-Vans.</span>
+            </p>
+            <div class="prod-card__highlights">
+              <span class="highlight highlight--pro" lang="en">✓ 2-min setup</span><span class="highlight highlight--pro" lang="de">✓ 2-Min-Aufbau</span>
+              <span class="highlight highlight--pro" lang="en">✓ UV50+ rated</span><span class="highlight highlight--pro" lang="de">✓ UV50+ bewertet</span>
+              <span class="highlight highlight--con" lang="en">– Professional install recommended</span><span class="highlight highlight--con" lang="de">– Profi-Montage empfohlen</span>
+            </div>
+            <div class="prod-card__footer">
+              <span class="prod-card__price-info" lang="en">From ~€349 · Fritz Berger</span><span class="prod-card__price-info" lang="de">Ab ~349 € · Fritz Berger</span>
+              <a href="#" class="prod-card__cta" rel="nofollow sponsored"><span lang="en">View Deal →</span><span lang="de">Angebot →</span></a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="why-section">
+    <svg class="why-section__topo" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.2">
+        <path d="M -80,90 C 200,60 500,105 800,78 C 1100,51 1320,92 1520,76"/>
+        <path d="M -80,145 C 220,118 540,160 840,136 C 1140,112 1350,150 1520,134"/>
+        <path d="M -80,200 C 240,175 560,218 860,196 C 1160,174 1360,210 1520,196"/>
+        <path d="M -80,255 C 260,232 580,274 880,254 C 1180,234 1370,268 1520,256"/>
+      </g>
+    </svg>
+    <div class="container">
+      <div class="why-section__inner">
+        <div>
+          <div class="why-section__label"><span lang="en">Our Approach</span><span lang="de">Unser Ansatz</span></div>
+          <h2 class="why-section__title"><span lang="en">Van Life Gear That Actually Works Off-Grid</span><span lang="de">Van-Life-Ausrüstung, die wirklich Off-Grid funktioniert</span></h2>
+          <div class="why-section__text">
+            <p lang="en">The van life market is full of gear optimised for Instagram — beautiful, fragile, and useless when it's raining in the Bavarian Alps. Our picks prioritise reliability, power efficiency, and longevity over aesthetics.</p>
+            <p lang="de">Der Van-Life-Markt ist voll mit Ausrüstung, die für Instagram optimiert ist — schön, zerbrechlich und nutzlos, wenn es in den Bayerischen Alpen regnet. Wir priorisieren Zuverlässigkeit, Energieeffizienz und Langlebigkeit über Ästhetik.</p>
+          </div>
+        </div>
+        <div class="why-criteria">
+          <div class="criterion"><span class="criterion__num">01</span><div><div class="criterion__title"><span lang="en">Power budget first</span><span lang="de">Energiebudget zuerst</span></div><p class="criterion__desc"><span lang="en">We calculate real-world consumption: fridge draw, phone charging, lighting, laptop — then recommend power stations that cover it with margin.</span><span lang="de">Wir berechnen den realen Verbrauch: Kühlbox, Handy, Licht, Laptop — und empfehlen Powerstations mit ausreichend Puffer.</span></p></div></div>
+          <div class="criterion"><span class="criterion__num">02</span><div><div class="criterion__title"><span lang="en">EU-available with warranty</span><span lang="de">In der EU erhältlich mit Garantie</span></div><p class="criterion__desc"><span lang="en">All products ship to Germany with proper EU warranty coverage — no grey market imports, no support headaches.</span><span lang="de">Alle Produkte liefern nach Deutschland mit EU-Garantie — keine Grauimporte, kein Support-Ärger.</span></p></div></div>
+          <div class="criterion"><span class="criterion__num">03</span><div><div class="criterion__title"><span lang="en">Cold-weather tested</span><span lang="de">Kältewetter-getestet</span></div><p class="criterion__desc"><span lang="en">Van life in Central Europe means cold nights. We only recommend gear that performs at 0°C and below — not just in a Californian summer.</span><span lang="de">Van Life in Mitteleuropa bedeutet kalte Nächte. Wir empfehlen nur Ausrüstung, die bei 0°C und darunter funktioniert.</span></p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <div class="footer__brand-logo">Pack<span>&</span>Wild</div>
+          <p class="footer__brand-tagline"><span lang="en">Curated outdoor gear &amp; minimalist living — since 2024.</span><span lang="de">Kuratierte Outdoor-Ausrüstung &amp; minimalistisches Leben — seit 2024.</span></p>
+        </div>
+        <div class="footer__nav-grid">
+          <div>
+            <div class="footer__nav-title" lang="en">Categories</div><div class="footer__nav-title" lang="de">Kategorien</div>
+            <div class="footer__nav-links">
+              <a href="/hiking/"><span lang="en">Hiking</span><span lang="de">Wandern</span></a>
+              <a href="/vanlife/">Van Life</a><a href="/camping/">Camping</a><a href="/edc/">EDC</a>
+              <a href="/travel/"><span lang="en">Travel</span><span lang="de">Reisen</span></a>
+              <a href="/home/"><span lang="en">Home</span><span lang="de">Zuhause</span></a>
+            </div>
+          </div>
+          <div>
+            <div class="footer__nav-title" lang="en">Site</div><div class="footer__nav-title" lang="de">Seite</div>
+            <div class="footer__nav-links">
+              <a href="/about/"><span lang="en">About</span><span lang="de">Über uns</span></a>
+              <a href="/privacy/"><span lang="en">Privacy</span><span lang="de">Datenschutz</span></a>
+              <a href="/imprint/"><span lang="en">Imprint</span><span lang="de">Impressum</span></a>
+            </div>
+          </div>
+          <div>
+            <div class="footer__nav-title" lang="en">Language</div><div class="footer__nav-title" lang="de">Sprache</div>
+            <div class="footer__nav-links">
+              <a href="/" onclick="setLang('en');return true;">🇬🇧 English</a>
+              <a href="/de/" onclick="setLang('de');return true;">🇩🇪 Deutsch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__disclosure">
+        <p lang="en"><strong>Affiliate Disclosure:</strong> PackAndWild participates in affiliate programs including AWIN partners (EcoFlow, Jackery, Fritz Berger, and others). We may earn a commission on purchases at no extra cost to you.</p>
+        <p lang="de"><strong>Affiliate-Hinweis:</strong> PackAndWild nimmt an Affiliate-Programmen teil, u.a. von AWIN-Partnern (EcoFlow, Jackery, Fritz Berger u.a.). Beim Kauf erhalten wir ggf. eine Provision ohne Mehrkosten für dich.</p>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copy"><span lang="en">© 2024 PackAndWild.</span><span lang="de">© 2024 PackAndWild.</span></span>
+        <nav class="footer__legal"><a href="/privacy/"><span lang="en">Privacy</span><span lang="de">Datenschutz</span></a><a href="/imprint/"><span lang="en">Imprint</span><span lang="de">Impressum</span></a></nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l);document.getElementById('btn-en').classList.toggle('is-active',l==='en');document.getElementById('btn-de').classList.toggle('is-active',l==='de');try{localStorage.setItem('paw-lang',l)}catch(e){}}
+    (function(){try{var s=localStorage.getItem('paw-lang');if(s==='de')setLang('de')}catch(e){}})();
+    var hb=document.getElementById('hamburger'),dr=document.getElementById('nav-drawer');
+    hb.addEventListener('click',function(){var o=dr.classList.toggle('is-open');hb.setAttribute('aria-expanded',o)});
+    dr.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){dr.classList.remove('is-open');hb.setAttribute('aria-expanded','false')})});
+    document.addEventListener('click',function(e){if(!hb.contains(e.target)&&!dr.contains(e.target)){dr.classList.remove('is-open');hb.setAttribute('aria-expanded','false')}});
+  </script>
+</body>
+</html>

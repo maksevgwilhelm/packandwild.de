@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minimalist Camping Gear — PackAndWild</title>
+  <meta name="description" content="Curated minimalist camping gear: ultralight stoves, cookware, camp chairs, and lighting. Less kit, better camp.">
+  <link rel="canonical" href="https://packandwild.de/camping/">
+  <link rel="alternate" hreflang="en" href="https://packandwild.de/camping/"><link rel="alternate" hreflang="de" href="https://packandwild.de/de/camping/">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--forest:#1B2B1F;--forest-deep:#131F16;--forest-mid:#243728;--sage:#4A6741;--sage-light:#6A9460;--cream:#F4EFE6;--cream-dark:#EBE5DB;--white:#FAFAF8;--slate:#5C6B7A;--bark:#8B6347;--bark-light:#9E7259;--font-display:'Playfair Display',Georgia,serif;--font-body:'Inter',system-ui,sans-serif;--radius-sm:4px;--radius-md:8px;--transition:.22s ease;--max-w:1200px;--nav-h:68px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--cream);color:var(--forest);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}ul{list-style:none}button{font-family:var(--font-body);cursor:pointer}
+    html[data-lang="en"] [lang="de"]{display:none!important}html[data-lang="de"] [lang="en"]{display:none!important}
+    .container{max-width:var(--max-w);margin:0 auto;padding:0 2rem}@media(max-width:600px){.container{padding:0 1.25rem}}
+    .nav{position:sticky;top:0;z-index:200;height:var(--nav-h);background:var(--forest);display:flex;align-items:center;box-shadow:0 1px 0 rgba(255,255,255,.04)}
+    .nav__inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--max-w);margin:0 auto;padding:0 2rem;gap:1.5rem}
+    .nav__logo{font-family:var(--font-display);font-size:1.35rem;font-weight:700;color:var(--cream);letter-spacing:-.02em;flex-shrink:0}.nav__logo-accent{color:var(--sage-light)}
+    .nav__links{display:flex;align-items:center;gap:.25rem}.nav__links a{padding:.4rem .75rem;font-size:.82rem;font-weight:500;color:rgba(244,239,230,.65);border-radius:var(--radius-sm);transition:all var(--transition)}.nav__links a:hover,.nav__links a.is-current{color:var(--cream);background:rgba(255,255,255,.05)}.nav__links a.is-current{color:var(--sage-light)}
+    .nav__right{display:flex;align-items:center;gap:.75rem;flex-shrink:0}.lang-pill{display:flex;align-items:center;background:rgba(255,255,255,.07);border-radius:100px;padding:3px;gap:2px}.lang-pill__btn{background:none;border:none;color:rgba(244,239,230,.45);font-size:.72rem;font-weight:700;letter-spacing:.06em;padding:.3rem .65rem;border-radius:100px;transition:all var(--transition)}.lang-pill__btn.is-active{background:var(--sage);color:#fff}
+    .nav__hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px}.nav__hamburger span{display:block;width:22px;height:1.5px;background:rgba(244,239,230,.7);border-radius:2px}
+    .nav__drawer{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--forest-mid);padding:1rem 2rem 1.5rem;border-top:1px solid rgba(255,255,255,.06);z-index:199;box-shadow:0 12px 32px rgba(0,0,0,.3)}.nav__drawer.is-open{display:block}.nav__drawer a{display:block;padding:.75rem 0;font-size:.95rem;font-weight:500;color:rgba(244,239,230,.75);border-bottom:1px solid rgba(255,255,255,.06);transition:color var(--transition)}.nav__drawer a:hover{color:var(--cream)}
+    @media(max-width:900px){.nav__links{display:none}.nav__hamburger{display:flex}}@media(max-width:600px){.nav__inner{padding:0 1.25rem}}
+    .page-banner{background:var(--forest);padding:4.5rem 0 3.5rem;position:relative;overflow:hidden}.page-banner__topo{position:absolute;inset:0;pointer-events:none}.page-banner__inner{position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+    .breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:rgba(244,239,230,.4);font-weight:500;margin-bottom:1rem}.breadcrumb a{color:rgba(244,239,230,.4);transition:color var(--transition)}.breadcrumb a:hover{color:var(--sage-light)}
+    .page-banner__eyebrow{font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-light);margin-bottom:.625rem}.page-banner__title{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,3.5rem);font-weight:700;color:var(--cream);line-height:1.1;letter-spacing:-.03em;margin-bottom:.75rem}.page-banner__sub{font-size:1rem;color:rgba(244,239,230,.6);max-width:500px;font-weight:300;line-height:1.65}
+    .page-banner__stat{display:flex;flex-direction:column;align-items:flex-end;gap:.25rem;flex-shrink:0}.page-banner__stat-num{font-family:var(--font-display);font-size:3rem;font-weight:700;color:var(--sage-light);line-height:1}.page-banner__stat-label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,239,230,.35)}@media(max-width:600px){.page-banner__stat{display:none}}
+    .disclosure-bar{background:rgba(27,43,31,.04);border-top:1px solid rgba(27,43,31,.07);border-bottom:1px solid rgba(27,43,31,.07);padding:.875rem 0}.disclosure-bar p{font-size:.76rem;color:var(--slate);line-height:1.5;text-align:center}.disclosure-bar a{color:var(--sage);text-decoration:underline;text-underline-offset:2px}
+    .intro-section{padding:3.5rem 0 2.5rem;border-bottom:1px solid rgba(27,43,31,.07)}.intro-section__inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}@media(max-width:700px){.intro-section__inner{grid-template-columns:1fr;gap:1.5rem}}.intro-section__lead{font-family:var(--font-display);font-size:1.5rem;font-style:italic;font-weight:400;color:var(--forest);line-height:1.5}.intro-section__body{font-size:.95rem;color:var(--slate);line-height:1.75;font-weight:300}.intro-section__body p+p{margin-top:1rem}.intro-section__tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.25rem}.tag{padding:.3rem .75rem;background:rgba(74,103,65,.1);color:var(--sage);font-size:.75rem;font-weight:600;letter-spacing:.05em;border-radius:100px}
+    .merchants-strip{background:var(--white);padding:2rem 0;border-bottom:1px solid rgba(27,43,31,.07)}.merchants-strip__inner{display:flex;align-items:center;gap:2rem;flex-wrap:wrap}.merchants-strip__label{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(27,43,31,.35);flex-shrink:0}.merchants-strip__list{display:flex;flex-wrap:wrap;gap:.625rem}.merchant-pill{padding:.35rem 1rem;border:1px solid rgba(27,43,31,.12);border-radius:100px;font-size:.78rem;font-weight:600;color:var(--slate);transition:all var(--transition)}.merchant-pill:hover{border-color:var(--sage);color:var(--sage)}
+    .products-section{padding:3rem 0 4rem}.products-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}.section-label{display:block;font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:.4rem}.section-title{font-family:var(--font-display);font-size:clamp(1.5rem,2.5vw,2.1rem);font-weight:700;line-height:1.2;letter-spacing:-.02em}
+    .product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}@media(max-width:700px){.product-grid{grid-template-columns:1fr}}
+    .prod-card{background:var(--white);border-radius:var(--radius-md);border:1px solid rgba(27,43,31,.07);display:flex;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease}.prod-card:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(27,43,31,.1)}.prod-card__thumb{width:200px;min-width:200px;background:var(--cream-dark);position:relative;display:flex;align-items:center;justify-content:center;flex-shrink:0}@media(max-width:500px){.prod-card{flex-direction:column}.prod-card__thumb{width:100%;min-width:auto;height:180px}}.prod-card__placeholder{font-size:3.5rem;opacity:.28}
+    .weight-badge{position:absolute;top:10px;right:10px;background:var(--forest);color:var(--cream);font-size:.67rem;font-weight:700;padding:.22rem .6rem;border-radius:100px;letter-spacing:.05em;display:flex;align-items:center;gap:.2rem}.weight-badge::before{content:'↓';font-size:.58rem;opacity:.65}
+    .merchant-badge{position:absolute;bottom:10px;left:10px;background:rgba(255,255,255,.9);color:var(--forest);font-size:.62rem;font-weight:700;padding:.2rem .55rem;border-radius:100px}
+    .prod-card__body{padding:1.375rem 1.5rem;display:flex;flex-direction:column;flex:1}.prod-card__meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem}.prod-card__brand{font-size:.67rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sage)}.prod-card__rating{font-size:.75rem;color:var(--bark);font-weight:600}.prod-card__name{font-family:var(--font-display);font-size:1.15rem;font-weight:500;color:var(--forest);line-height:1.25;margin-bottom:.5rem}.prod-card__tagline{font-size:.8rem;font-weight:600;color:var(--slate);font-style:italic;margin-bottom:.5rem}.prod-card__desc{font-size:.84rem;color:var(--slate);line-height:1.6;flex:1;margin-bottom:1rem}
+    .prod-card__highlights{display:flex;flex-wrap:wrap;gap:.375rem;margin-bottom:1rem}.highlight{font-size:.72rem;font-weight:500;padding:.2rem .6rem;border-radius:4px}.highlight--pro{background:rgba(74,103,65,.1);color:var(--sage)}.highlight--con{background:rgba(92,107,122,.1);color:var(--slate)}
+    .prod-card__footer{display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap}.prod-card__price-info{font-size:.75rem;color:var(--slate)}.prod-card__cta{display:inline-flex;align-items:center;gap:.4rem;padding:.65rem 1.125rem;background:var(--forest);color:var(--cream);font-size:.82rem;font-weight:600;border-radius:var(--radius-sm);transition:background var(--transition)}.prod-card__cta:hover{background:var(--sage)}
+    .why-section{background:var(--forest);padding:5rem 0;position:relative;overflow:hidden}.why-section__topo{position:absolute;inset:0;pointer-events:none}.why-section__inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.6fr;gap:5rem;align-items:start}@media(max-width:800px){.why-section__inner{grid-template-columns:1fr;gap:2.5rem}}.why-section__label{font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-light);margin-bottom:.75rem}.why-section__title{font-family:var(--font-display);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:var(--cream);line-height:1.2;letter-spacing:-.02em;margin-bottom:1.5rem}.why-section__text{font-size:.95rem;color:rgba(244,239,230,.55);line-height:1.75;font-weight:300}.why-section__text p+p{margin-top:1rem}
+    .why-criteria{display:flex;flex-direction:column;gap:1.5rem}.criterion{display:flex;gap:1.25rem;align-items:flex-start}.criterion__num{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--sage-light);line-height:1;flex-shrink:0;min-width:2rem}.criterion__title{font-size:.9rem;font-weight:600;color:var(--cream);margin-bottom:.3rem}.criterion__desc{font-size:.84rem;color:rgba(244,239,230,.5);line-height:1.6;font-weight:300}
+    .footer{background:var(--forest-deep);padding:3.5rem 0 2rem}.footer__top{display:grid;grid-template-columns:1fr 2fr;gap:4rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:1.5rem}@media(max-width:700px){.footer__top{grid-template-columns:1fr;gap:2rem}}.footer__brand-logo{font-family:var(--font-display);font-size:1.35rem;font-weight:700;color:var(--cream);letter-spacing:-.02em;margin-bottom:.625rem}.footer__brand-logo span{color:var(--sage-light)}.footer__brand-tagline{font-size:.82rem;color:rgba(244,239,230,.35);line-height:1.6;max-width:220px}.footer__nav-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}@media(max-width:500px){.footer__nav-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}}.footer__nav-title{font-size:.66rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:rgba(244,239,230,.3);margin-bottom:.875rem}.footer__nav-links{display:flex;flex-direction:column;gap:.5rem}.footer__nav-links a{font-size:.85rem;color:rgba(244,239,230,.5);transition:color var(--transition)}.footer__nav-links a:hover{color:var(--cream)}.footer__disclosure{font-size:.76rem;color:rgba(244,239,230,.32);line-height:1.65;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,.05);margin-bottom:1.5rem}.footer__bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem}.footer__copy{font-size:.76rem;color:rgba(244,239,230,.28)}.footer__legal{display:flex;gap:1.5rem}.footer__legal a{font-size:.76rem;color:rgba(244,239,230,.32);transition:color var(--transition)}.footer__legal a:hover{color:rgba(244,239,230,.7)}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">Pack<span class="nav__logo-accent">&</span>Wild</a>
+      <nav class="nav__links">
+        <a href="/hiking/" lang="en">Hiking</a><a href="/de/wandern/" lang="de">Wandern</a>
+        <a href="/vanlife/">Van Life</a>
+        <a href="/camping/" class="is-current" lang="en" aria-current="page">Camping</a><a href="/de/camping/" class="is-current" lang="de" aria-current="page">Camping</a>
+        <a href="/edc/">EDC</a>
+        <a href="/travel/" lang="en">Travel</a><a href="/de/reisen/" lang="de">Reisen</a>
+        <a href="/home/" lang="en">Home</a><a href="/de/zuhause/" lang="de">Zuhause</a>
+      </nav>
+      <div class="nav__right">
+        <div class="lang-pill"><button class="lang-pill__btn is-active" id="btn-en" onclick="setLang('en')">EN</button><button class="lang-pill__btn" id="btn-de" onclick="setLang('de')">DE</button></div>
+        <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="nav__drawer" id="nav-drawer">
+      <a href="/hiking/"><span lang="en">Hiking</span><span lang="de">Wandern</span></a><a href="/vanlife/">Van Life</a><a href="/camping/">Camping</a><a href="/edc/">EDC</a><a href="/travel/"><span lang="en">Travel</span><span lang="de">Reisen</span></a><a href="/home/"><span lang="en">Home</span><span lang="de">Zuhause</span></a><a href="/about/"><span lang="en">About</span><span lang="de">Über uns</span></a>
+    </nav>
+  </header>
+
+  <section class="page-banner">
+    <svg class="page-banner__topo" viewBox="0 0 1440 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1.2"><path d="M -80,80 C 200,50 500,100 800,72 C 1100,44 1320,88 1520,70"/><path d="M -80,130 C 200,102 520,150 820,124 C 1120,98 1340,140 1520,122"/><path d="M -80,180 C 220,154 540,200 840,176 C 1140,152 1350,192 1520,174"/><path d="M -80,228 C 240,204 560,248 860,226 C 1160,204 1360,240 1520,224"/></g></svg>
+    <div class="container">
+      <div class="page-banner__inner">
+        <div>
+          <nav class="breadcrumb"><a href="/">PackAndWild</a><span>›</span><span lang="en">Minimalist Camping</span><span lang="de">Minimalistisches Camping</span></nav>
+          <div class="page-banner__eyebrow"><span lang="en">Gear Guide</span><span lang="de">Ausrüstungsguide</span></div>
+          <h1 class="page-banner__title"><span lang="en">Minimalist Camping</span><span lang="de">Minimalistisches Camping</span></h1>
+          <p class="page-banner__sub"><span lang="en">Stoves, cookware, chairs, and lighting that do more with less. The best camp is a simple camp.</span><span lang="de">Kocher, Kochgeschirr, Stühle und Licht, die mehr mit weniger leisten. Das beste Camp ist ein einfaches Camp.</span></p>
+        </div>
+        <div class="page-banner__stat"><span class="page-banner__stat-num">6</span><span class="page-banner__stat-label" lang="en">Curated Picks</span><span class="page-banner__stat-label" lang="de">Kuratierte Picks</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="disclosure-bar"><div class="container"><p lang="en"><strong>Affiliate Disclosure:</strong> PackAndWild uses affiliate links. We may earn a small commission on purchases — at no extra cost to you. <a href="/about/#disclosure">Learn more</a></p><p lang="de"><strong>Affiliate-Hinweis:</strong> PackAndWild verwendet Affiliate-Links. Beim Kauf erhalten wir eine kleine Provision — ohne Mehrkosten für dich. <a href="/de/ueber-uns/#disclosure">Mehr erfahren</a></p></div></div>
+
+  <div class="intro-section"><div class="container"><div class="intro-section__inner">
+    <div><p class="intro-section__lead"><span lang="en">"Cook well, sleep well, leave nothing."</span><span lang="de">„Gut kochen, gut schlafen, nichts hinterlassen."</span></p><div class="intro-section__tags"><span class="tag">Ultralight</span><span class="tag">Leave No Trace</span><span class="tag" lang="en">Minimal Kit</span><span class="tag" lang="de">Minimal-Kit</span></div></div>
+    <div class="intro-section__body">
+      <p lang="en">Minimalist camping isn't about suffering — it's about precision. A 73g stove boils water faster than a heavy one. A well-designed cookset eliminates half the utensils. The right chair weighs under 1kg and packs to the size of a water bottle.</p>
+      <p lang="en">Our picks cover the full camp kitchen and comfort setup: from cooking to lighting to seating — with DACH-available gear from merchants who understand European camping conditions.</p>
+      <p lang="de">Minimalistisches Camping bedeutet kein Verzicht — sondern Präzision. Ein 73g-Kocher kocht Wasser schneller als ein schwerer. Ein gut konzipiertes Kochset eliminiert die Hälfte des Bestecks. Der richtige Stuhl wiegt unter 1kg und packt sich zur Größe einer Wasserflasche.</p>
+      <p lang="de">Unsere Auswahl umfasst das komplette Camp-Kitchen- und Komfort-Setup: vom Kochen bis zur Beleuchtung — mit DACH-verfügbarer Ausrüstung von Händlern, die europäische Campingbedingungen kennen.</p>
+    </div>
+  </div></div></div>
+
+  <div class="merchants-strip"><div class="container"><div class="merchants-strip__inner"><span class="merchants-strip__label" lang="en">Shop at</span><span class="merchants-strip__label" lang="de">Kaufen bei</span><div class="merchants-strip__list"><a href="#" class="merchant-pill" rel="nofollow">BURNHARD</a><a href="#" class="merchant-pill" rel="nofollow">Camping and Co</a><a href="#" class="merchant-pill" rel="nofollow">Camptools</a><a href="#" class="merchant-pill" rel="nofollow">YEAZ</a></div></div></div></div>
+
+  <section class="products-section"><div class="container">
+    <div class="products-header"><div><span class="section-label"><span lang="en">Our Picks</span><span lang="de">Unsere Picks</span></span><h2 class="section-title"><span lang="en">Best Minimalist Camping Gear</span><span lang="de">Beste minimalistische Campingausrüstung</span></h2></div></div>
+    <div class="product-grid">
+
+      <article class="prod-card">
+        <div class="prod-card__thumb"><span class="prod-card__placeholder">🔥</span><span class="weight-badge">73 g</span><span class="merchant-badge">Camping and Co</span></div>
+        <div class="prod-card__body">
+          <div class="prod-card__meta"><span class="prod-card__brand">MSR</span><span class="prod-card__rating">★★★★★</span></div>
+          <div class="prod-card__name">PocketRocket 2</div>
+          <p class="prod-card__tagline"><span lang="en">73 grams. Boils 1L in 3.5 minutes.</span><span lang="de">73 Gramm. 1L in 3,5 Minuten.</span></p>
+          <p class="prod-card__desc"><span lang="en">The gold standard ultralight canister stove. Compact enough to pack inside a mug, reliable in wind and cold. Simmer control works. Used by thru-hikers and weekend campers alike for 20+ years.</span><span lang="de">Der Goldstandard unter den Ultraleicht-Gaskocher. Klein genug für eine Tasse, zuverlässig bei Wind und Kälte. Funktioniert seit 20+ Jahren auf Fernwanderwegen und beim Wochenend-Camping.</span></p>
+          <div class="prod-card__highlights"><span class="highlight highlight--pro" lang="en">✓ 73g incl. igniter</span><span class="highlight highlight--pro" lang="de">✓ 73g inkl. Zünder</span><span class="highlight highlight--pro" lang="en">✓ Works below 0°C</span><span class="highlight highlight--pro" lang="de">✓ Funktioniert unter 0°C</span><span class="highlight highlight--con" lang="en">– Needs windscreen in gusts</span><span class="highlight highlight--con" lang="de">– Windschutz bei Böen nötig</span></div>
+          <div class="prod-card__footer"><span class="prod-card__price-info" lang="en">From ~€45 · Camping and Co</span><span class="prod-card__price-info" lang="de">Ab ~45 € · Camping and Co</span><a href="#" class="prod-card__cta" rel="nofollow sponsored"><span lang="en">View Deal →</span><span lang="de">Angebot →</span></a></div>
+        </div>
+      </article>
+
+      <article class="prod-card">
+        <div class="prod-card__thumb"><span class="prod-card__placeholder">🪑</span><span class="weight-badge">510 g</span><span class="merchant-badge">Camping and Co</span></div>
+        <div class="prod-card__body">
+          <div class="prod-card__meta"><span class="prod-card__brand">Helinox</span><span class="prod-card__rating">★★★★★</span></div>
+          <div class="prod-card__name">Chair Zero</div>
+          <p class="prod-card__tagline"><span lang="en">510g. The benchmark ultralight camp chair.</span><span lang="de">510g. Der Maßstab für ultraleichte Campingstühle.</span></p>
+          <p class="prod-card__desc"><span lang="en">DAC aluminium poles, 7075-series alloy hub, 120kg load rated. Packs to the size of a 1L water bottle. Sets up in under 30 seconds. Unmatched comfort-to-weight ratio for any sitting surface.</span><span lang="de">DAC Aluminium-Stangen, 7075-Legierungs-Hub, 120kg Tragfähigkeit. Packt sich zur Größe einer 1L-Flasche. Aufgebaut in unter 30 Sekunden.</span></p>
+          <div class="prod-card__highlights"><span class="highlight highlight--pro" lang="en">✓ 510g total</span><span class="highlight highlight--pro" lang="de">✓ 510g gesamt</span><span class="highlight highlight--pro" lang="en">✓ 120kg rated</span><span class="highlight highlight--pro" lang="de">✓ 120kg Tragfähigkeit</span><span class="highlight highlight--con" lang="en">– Low seating position</span><span class="highlight highlight--con" lang="de">– Niedrige Sitzposition</span></div>
+          <div class="prod-card__footer"><span class="prod-card__price-info" lang="en">From ~€130 · Camping and Co</span><span class="prod-card__price-info" lang="de">Ab ~130 € · Camping and Co</span><a href="#" class="prod-card__cta" rel="nofollow sponsored"><span lang="en">View Deal →</span><span lang="de">Angebot →</span></a></div>
+        </div>
+      </article>
+
+      <article class="prod-card">
+        <div class="prod-card__thumb"><span class="prod-card__placeholder">🥩</span><span class="weight-badge">4.5 kg</span><span class="merchant-badge">BURNHARD</span></div>
+        <div class="prod-card__body">
+          <div class="prod-card__meta"><span class="prod-card__brand">BURNHARD</span><span class="prod-card__rating">★★★★☆</span></div>
+          <div class="prod-card__name">Big Fred Pro</div>
+          <p class="prod-card__tagline"><span lang="en">German-engineered portable grill. Camp-ready in 10 min.</span><span lang="de">Deutsch entwickelter Campinggrill. In 10 Min bereit.</span></p>
+          <p class="prod-card__desc"><span lang="en">Double-walled lid for heat retention, ceramic-coated cast iron grate, gas and charcoal compatible. Foldable legs, carrying bag included. The most capable portable grill at this weight class in Europe.</span><span lang="de">Doppelwandiger Deckel für Wärmespeicherung, keramikbeschichteter Gusseisenrost, gas- und holzkohlekomptatibel. Klappbeine, Tragetasche inklusive.</span></p>
+          <div class="prod-card__highlights"><span class="highlight highlight--pro" lang="en">✓ Gas + charcoal</span><span class="highlight highlight--pro" lang="de">✓ Gas + Holzkohle</span><span class="highlight highlight--pro" lang="en">✓ German brand</span><span class="highlight highlight--pro" lang="de">✓ Deutsche Marke</span><span class="highlight highlight--con" lang="en">– 4.5kg for backpacking</span><span class="highlight highlight--con" lang="de">– 4,5kg für Backpacking</span></div>
+          <div class="prod-card__footer"><span class="prod-card__price-info" lang="en">From ~€89 · BURNHARD</span><span class="prod-card__price-info" lang="de">Ab ~89 € · BURNHARD</span><a href="#" class="prod-card__cta" rel="nofollow sponsored"><span lang="en">View Deal →</span><span lang="de">Angebot →</span></a></div>
+        </div>
+      </article>
+
+      <article class="prod-card">
+        <div class="prod-card__thumb"><span class="prod-card__placeholder">🍳</span><span class="weight-badge">130 g</span><span class="merchant-badge">Camping and Co</span></div>
+        <div class="prod-card__body">
+          <div class="prod-card__meta"><span class="prod-card__brand">GSI Outdoors</span><span class="prod-card__rating">★★★★★</span></div>
+          <div class="prod-card__name">Pinnacle Soloist</div>
+          <p class="prod-card__tagline"><span lang="en">Complete 1-person cook system in 130g.</span><span lang="de">Komplettes 1-Personen-Kochsystem in 130g.</span></p>
+          <p class="prod-card__desc"><span lang="en">Hard-anodized pot with folding handles, insulated Sip-It lid, Foon utensil, mesh stuff sack — all nest inside the 590ml pot. Non-stick interior cleans easily in the field. The best ultralight cookset for solo camping.</span><span lang="de">Hart eloxierter Topf mit Klappgriffen, isoliertem Sip-It-Deckel, Foon-Utensil, Netz-Packsack — alles stapelt sich im 590ml Topf. Antihaft-Innenbeschichtung.</span></p>
+          <div class="prod-card__highlights"><span class="highlight highlight--pro" lang="en">✓ Complete system</span><span class="highlight highlight--pro" lang="de">✓ Komplettsystem</span><span class="highlight highlight--pro" lang="en">✓ 130g total</span><span class="highlight highlight--pro" lang="de">✓ 130g gesamt</span><span class="highlight highlight--con" lang="en">– Solo use only</span><span class="highlight highlight--con" lang="de">– Nur Einzelperson</span></div>
+          <div class="prod-card__footer"><span class="prod-card__price-info" lang="en">From ~€38 · Camping and Co</span><span class="prod-card__price-info" lang="de">Ab ~38 € · Camping and Co</span><a href="#" class="prod-card__cta" rel="nofollow sponsored"><span lang="en">View Deal →</span><span lang="de">Angebot →</span></a></div>
+        </div>
+      </article>
+
+      <article class="prod-card">
+        <div class="prod-card__thumb"><span class="prod-card__placeholder">💡</span><span class="weight-badge">148 g</span><span class="merchant-badge">Camptools</span></div>
+        <div class="prod-card__body">
+          <div class="prod-card__meta"><span class="prod-card__brand">Goal Zero</span><span class="prod-card__rating">★★★★☆</span></div>
+          <div class="prod-card__name">Lighthouse Micro Charge</div>
+          <p class="prod-card__tagline"><span lang="en">150 lumens. Charges your phone too.</span><span lang="de">150 Lumen. Lädt auch dein Handy.</span></p>
+          <p class="prod-card__desc"><span lang="en">USB-C rechargeable, 150 lumen max, folds flat to 2cm. 250+ hour runtime on low. Built-in 2,600mAh battery charges phones via USB. Doubles as a hanging lantern or stands upright. The most versatile camp light at this weight.</span><span lang="de">USB-C aufladbar, 150 Lumen max, klappt auf 2cm flach. 250+ Stunden Laufzeit auf niedrig. Eingebauter 2.600mAh Akku lädt Handys per USB auf.</span></p>
+          <div class="prod-card__highlights"><span class="highlight highlight--pro" lang="en">✓ Phone charging</span><span class="highlight highlight--pro" lang="de">✓ Handy laden</span><span class="highlight highlight--pro" lang="en">✓ 250h low runtime</span><span class="highlight highlight--pro" lang="de">✓ 250h niedrige Laufzeit</span><span class="highlight highlight--con" lang="en">– Dim at distance</span><span class="highlight highlight--con" lang="de">– Auf Distanz schwach</span></div>
+          <div class="prod-card__footer"><span class="prod-card__price-info" lang="en">From ~€40 · Camptools</span><span class="prod-card__price-info" lang="de">Ab ~40 € · Camptools</span><a href="#" class="prod-card__cta" rel="nofollow sponsored"><span lang="en">View Deal →</span><span lang="de">Angebot →</span></a></div>
+        </div>
+      </article>
+
+      <article class="prod-card">
+        <div class="prod-card__thumb"><span class="prod-card__placeholder">🏊</span><span class="weight-badge">370 g</span><span class="merchant-badge">YEAZ</span></div>
+        <div class="prod-card__body">
+          <div class="prod-card__meta"><span class="prod-card__brand">YEAZ</span><span class="prod-card__rating">★★★★☆</span></div>
+          <div class="prod-card__name">CLOUD Hammock Set</div>
+          <p class="prod-card__tagline"><span lang="en">Hang anywhere. Sleep anywhere.</span><span lang="de">Überall hängen. Überall schlafen.</span></p>
+          <p class="prod-card__desc"><span lang="en">Parachute nylon, 200kg load rated, 3m length. Includes tree straps, carabiners, and compression sack. Sets up between two trees in under 5 minutes. Weighs less than most sleeping pads. A DACH brand that knows European forests.</span><span lang="de">Fallschirm-Nylon, 200kg Tragfähigkeit, 3m Länge. Mit Baumgurten, Karabinern und Kompressionsbeutel. Zwischen zwei Bäumen in unter 5 Minuten. Eine DACH-Marke, die europäische Wälder kennt.</span></p>
+          <div class="prod-card__highlights"><span class="highlight highlight--pro" lang="en">✓ 200kg rated</span><span class="highlight highlight--pro" lang="de">✓ 200kg Tragfähigkeit</span><span class="highlight highlight--pro" lang="en">✓ DACH brand</span><span class="highlight highlight--pro" lang="de">✓ DACH-Marke</span><span class="highlight highlight--con" lang="en">– Needs two trees</span><span class="highlight highlight--con" lang="de">– Braucht zwei Bäume</span></div>
+          <div class="prod-card__footer"><span class="prod-card__price-info" lang="en">From ~€35 · YEAZ</span><span class="prod-card__price-info" lang="de">Ab ~35 € · YEAZ</span><a href="#" class="prod-card__cta" rel="nofollow sponsored"><span lang="en">View Deal →</span><span lang="de">Angebot →</span></a></div>
+        </div>
+      </article>
+
+    </div>
+  </div></section>
+
+  <section class="why-section">
+    <svg class="why-section__topo" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.2"><path d="M -80,90 C 200,60 500,105 800,78 C 1100,51 1320,92 1520,76"/><path d="M -80,145 C 220,118 540,160 840,136 C 1140,112 1350,150 1520,134"/><path d="M -80,200 C 240,175 560,218 860,196 C 1160,174 1360,210 1520,196"/><path d="M -80,255 C 260,232 580,274 880,254 C 1180,234 1370,268 1520,256"/></g></svg>
+    <div class="container"><div class="why-section__inner">
+      <div>
+        <div class="why-section__label"><span lang="en">Our Approach</span><span lang="de">Unser Ansatz</span></div>
+        <h2 class="why-section__title"><span lang="en">Why Less Is More at Camp</span><span lang="de">Warum weniger mehr ist beim Camping</span></h2>
+        <div class="why-section__text"><p lang="en">Most campers carry twice what they need. A minimalist kit — done right — is faster to set up, easier to pack, and more enjoyable to use. Every item on this page pulls double duty or eliminates something else.</p><p lang="de">Die meisten Camper tragen doppelt so viel wie nötig. Ein minimalistisches Kit — richtig zusammengestellt — ist schneller aufgebaut, einfacher zu packen und angenehmer zu benutzen.</p></div>
+      </div>
+      <div class="why-criteria">
+        <div class="criterion"><span class="criterion__num">01</span><div><div class="criterion__title"><span lang="en">Multi-purpose over single-use</span><span lang="de">Mehrzweck statt Einzweck</span></div><p class="criterion__desc"><span lang="en">A pot lid that doubles as a pan. A lantern that charges your phone. Gear that earns its place by doing two jobs.</span><span lang="de">Ein Topfdeckel, der auch als Pfanne dient. Eine Laterne, die dein Handy lädt. Ausrüstung, die zwei Jobs erledigt.</span></p></div></div>
+        <div class="criterion"><span class="criterion__num">02</span><div><div class="criterion__title"><span lang="en">Weight per function, not absolute weight</span><span lang="de">Gewicht pro Funktion, nicht absolutes Gewicht</span></div><p class="criterion__desc"><span lang="en">A 4.5kg grill that replaces 10kg of separate cooking kit is a net win. We think in systems, not individual items.</span><span lang="de">Ein 4,5kg-Grill, der 10kg separates Kochequipment ersetzt, ist ein Nettogewinn. Wir denken in Systemen.</span></p></div></div>
+        <div class="criterion"><span class="criterion__num">03</span><div><div class="criterion__title"><span lang="en">Available for overnight delivery in DACH</span><span lang="de">Overnight-Lieferung in DACH verfügbar</span></div><p class="criterion__desc"><span lang="en">Nothing worse than ordering gear for next weekend's trip and it arriving too late. All picks ship fast in Germany, Austria, and Switzerland.</span><span lang="de">Nichts Schlimmeres als Ausrüstung für das Wochenend-Trip bestellen und zu spät ankommen. Alle Picks liefern schnell in Deutschland, Österreich und der Schweiz.</span></p></div></div>
+      </div>
+    </div></div>
+  </section>
+
+  <footer class="footer"><div class="container">
+    <div class="footer__top">
+      <div><div class="footer__brand-logo">Pack<span>&</span>Wild</div><p class="footer__brand-tagline"><span lang="en">Curated outdoor gear &amp; minimalist living — since 2024.</span><span lang="de">Kuratierte Outdoor-Ausrüstung &amp; minimalistisches Leben — seit 2024.</span></p></div>
+      <div class="footer__nav-grid">
+        <div><div class="footer__nav-title" lang="en">Categories</div><div class="footer__nav-title" lang="de">Kategorien</div><div class="footer__nav-links"><a href="/hiking/"><span lang="en">Hiking</span><span lang="de">Wandern</span></a><a href="/vanlife/">Van Life</a><a href="/camping/">Camping</a><a href="/edc/">EDC</a><a href="/travel/"><span lang="en">Travel</span><span lang="de">Reisen</span></a><a href="/home/"><span lang="en">Home</span><span lang="de">Zuhause</span></a></div></div>
+        <div><div class="footer__nav-title" lang="en">Site</div><div class="footer__nav-title" lang="de">Seite</div><div class="footer__nav-links"><a href="/about/"><span lang="en">About</span><span lang="de">Über uns</span></a><a href="/privacy/"><span lang="en">Privacy</span><span lang="de">Datenschutz</span></a><a href="/imprint/"><span lang="en">Imprint</span><span lang="de">Impressum</span></a></div></div>
+        <div><div class="footer__nav-title" lang="en">Language</div><div class="footer__nav-title" lang="de">Sprache</div><div class="footer__nav-links"><a href="/" onclick="setLang('en');return true;">🇬🇧 English</a><a href="/de/" onclick="setLang('de');return true;">🇩🇪 Deutsch</a></div></div>
+      </div>
+    </div>
+    <div class="footer__disclosure"><p lang="en"><strong>Affiliate Disclosure:</strong> PackAndWild participates in affiliate programs including AWIN partners (BURNHARD, Camping and Co, Camptools, YEAZ, and others). We may earn a commission on purchases at no extra cost to you.</p><p lang="de"><strong>Affiliate-Hinweis:</strong> PackAndWild nimmt an Affiliate-Programmen teil, u.a. von AWIN-Partnern (BURNHARD, Camping and Co, Camptools, YEAZ u.a.). Beim Kauf erhalten wir ggf. eine Provision ohne Mehrkosten für dich.</p></div>
+    <div class="footer__bottom"><span class="footer__copy"><span lang="en">© 2024 PackAndWild.</span><span lang="de">© 2024 PackAndWild.</span></span><nav class="footer__legal"><a href="/privacy/"><span lang="en">Privacy</span><span lang="de">Datenschutz</span></a><a href="/imprint/"><span lang="en">Imprint</span><span lang="de">Impressum</span></a></nav></div>
+  </div></footer>
+
+  <script>
+    function setLang(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l);document.getElementById('btn-en').classList.toggle('is-active',l==='en');document.getElementById('btn-de').classList.toggle('is-active',l==='de');try{localStorage.setItem('paw-lang',l)}catch(e){}}
+    (function(){try{var s=localStorage.getItem('paw-lang');if(s==='de')setLang('de')}catch(e){}})();
+    var hb=document.getElementById('hamburger'),dr=document.getElementById('nav-drawer');
+    hb.addEventListener('click',function(){var o=dr.classList.toggle('is-open');hb.setAttribute('aria-expanded',o)});
+    dr.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){dr.classList.remove('is-open');hb.setAttribute('aria-expanded','false')})});
+    document.addEventListener('click',function(e){if(!hb.contains(e.target)&&!dr.contains(e.target)){dr.classList.remove('is-open');hb.setAttribute('aria-expanded','false')}});
+  </script>
+</body>
+</html>
