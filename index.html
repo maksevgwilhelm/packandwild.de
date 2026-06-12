@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PackAndWild — Curated Gear for Minimalist Adventurers</title>
+  <meta name="description" content="Curated outdoor gear for ultralight hikers, van lifers, and minimalist adventurers. Less weight, better choices, more trail.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://packandwild.de/">
+  <link rel="alternate" hreflang="en" href="https://packandwild.de/">
+  <link rel="alternate" hreflang="de" href="https://packandwild.de/de/">
+  <link rel="alternate" hreflang="x-default" href="https://packandwild.de/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       TOKENS
+    ============================================================ */
+    :root {
+      --forest:       #1B2B1F;
+      --forest-deep:  #131F16;
+      --forest-mid:   #243728;
+      --sage:         #4A6741;
+      --sage-light:   #6A9460;
+      --cream:        #F4EFE6;
+      --cream-dark:   #EBE5DB;
+      --white:        #FAFAF8;
+      --slate:        #5C6B7A;
+      --bark:         #8B6347;
+      --bark-light:   #9E7259;
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+
+      --radius-sm:  4px;
+      --radius-md:  8px;
+      --radius-lg:  16px;
+      --transition: 0.22s ease;
+
+      --max-w: 1200px;
+      --nav-h: 68px;
+    }
+
+    /* ============================================================
+       RESET
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--forest);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+    button { font-family: var(--font-body); cursor: pointer; }
+
+    /* ============================================================
+       LANGUAGE TOGGLE LOGIC
+       data-lang="en" on <html> shows [lang="en"], hides [lang="de"]
+    ============================================================ */
+    html[data-lang="en"] [lang="de"] { display: none !important; }
+    html[data-lang="de"] [lang="en"] { display: none !important; }
+
+    /* ============================================================
+       LAYOUT HELPERS
+    ============================================================ */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    @media (max-width: 600px) { .container { padding: 0 1.25rem; } }
+
+    .section { padding: 5rem 0; }
+    .section--alt { background: var(--white); }
+    .section--dark { background: var(--forest); }
+
+    .section-label {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.6rem;
+    }
+    .section-label--light { color: var(--sage-light); }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .section-title--light { color: var(--cream); }
+
+    .section-sub {
+      font-size: 1rem;
+      color: var(--slate);
+      margin-top: 0.5rem;
+      max-width: 520px;
+      font-weight: 300;
+    }
+    .section-sub--light { color: rgba(244,239,230,0.6); }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 1.75rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border-radius: var(--radius-sm);
+      border: none;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+    .btn--primary {
+      background: var(--bark);
+      color: var(--white);
+    }
+    .btn--primary:hover {
+      background: var(--bark-light);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(139,99,71,0.35);
+    }
+    .btn--ghost {
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid rgba(244,239,230,0.25);
+    }
+    .btn--ghost:hover {
+      border-color: rgba(244,239,230,0.6);
+      background: rgba(244,239,230,0.06);
+    }
+    .btn--sage {
+      background: var(--sage);
+      color: var(--white);
+    }
+    .btn--sage:hover {
+      background: #5a7a50;
+      transform: translateY(-1px);
+    }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      height: var(--nav-h);
+      background: var(--forest);
+      display: flex;
+      align-items: center;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.04);
+    }
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 2rem;
+      gap: 1.5rem;
+    }
+    .nav__logo {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+    .nav__logo-accent { color: var(--sage-light); }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .nav__links a {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: rgba(244,239,230,0.65);
+      border-radius: var(--radius-sm);
+      transition: all var(--transition);
+    }
+    .nav__links a:hover {
+      color: var(--cream);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .nav__right {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    /* Language toggle pill */
+    .lang-pill {
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.07);
+      border-radius: 100px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .lang-pill__btn {
+      background: none;
+      border: none;
+      color: rgba(244,239,230,0.45);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 0.3rem 0.65rem;
+      border-radius: 100px;
+      transition: all var(--transition);
+    }
+    .lang-pill__btn.is-active {
+      background: var(--sage);
+      color: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+    }
+    .lang-pill__btn:hover:not(.is-active) {
+      color: rgba(244,239,230,0.8);
+    }
+
+    /* Mobile hamburger */
+    .nav__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      padding: 6px;
+      cursor: pointer;
+    }
+    .nav__hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: rgba(244,239,230,0.7);
+      border-radius: 2px;
+      transition: all var(--transition);
+    }
+
+    /* Mobile drawer */
+    .nav__drawer {
+      display: none;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0; right: 0;
+      background: var(--forest-mid);
+      padding: 1rem 2rem 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      z-index: 199;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+    }
+    .nav__drawer.is-open { display: block; }
+    .nav__drawer a {
+      display: block;
+      padding: 0.75rem 0;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: rgba(244,239,230,0.75);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: color var(--transition);
+    }
+    .nav__drawer a:hover { color: var(--cream); }
+
+    @media (max-width: 900px) {
+      .nav__links { display: none; }
+      .nav__hamburger { display: flex; }
+    }
+    @media (max-width: 600px) {
+      .nav__inner { padding: 0 1.25rem; }
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      position: relative;
+      background: var(--forest);
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero__topo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 1;
+    }
+    .hero__content {
+      position: relative;
+      z-index: 1;
+      padding: 7rem 0 6rem;
+      max-width: 640px;
+    }
+    .hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage-light);
+      margin-bottom: 1.25rem;
+    }
+    .hero__eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--sage-light);
+    }
+    .hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2.75rem, 6vw, 4.75rem);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+    .hero__title em {
+      font-style: italic;
+      color: var(--sage-light);
+    }
+    .hero__sub {
+      font-size: 1.1rem;
+      color: rgba(244,239,230,0.65);
+      line-height: 1.75;
+      font-weight: 300;
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+    }
+    .hero__ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .hero__scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(244,239,230,0.3);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .hero__scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(244,239,230,0.3), transparent);
+    }
+
+    @media (max-width: 600px) {
+      .hero__content { padding: 5rem 0 4rem; }
+      .hero__ctas { flex-direction: column; }
+      .hero__ctas .btn { text-align: center; justify-content: center; }
+    }
+
+    /* ============================================================
+       CATEGORY GRID
+    ============================================================ */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 900px) { .category-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px)  { .category-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; } }
+
+    .cat-card {
+      display: block;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(27,43,31,0.07);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .cat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(27,43,31,0.1);
+      border-color: rgba(74,103,65,0.2);
+    }
+    .cat-card__thumb {
+      height: 170px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    /* Per-category tones */
+    .cat-card--hiking  .cat-card__thumb { background: #253D29; }
+    .cat-card--vanlife .cat-card__thumb { background: #2A3D2C; }
+    .cat-card--camping .cat-card__thumb { background: #203427; }
+    .cat-card--edc     .cat-card__thumb { background: #1C2E20; }
+    .cat-card--travel  .cat-card__thumb { background: #27402B; }
+    .cat-card--home    .cat-card__thumb { background: #2B3D28; }
+
+    .cat-card__emoji {
+      font-size: 2.75rem;
+      opacity: 0.5;
+      transition: opacity var(--transition), transform var(--transition);
+    }
+    .cat-card:hover .cat-card__emoji {
+      opacity: 0.75;
+      transform: scale(1.1);
+    }
+    .cat-card__body {
+      padding: 1.125rem 1.375rem 1.25rem;
+    }
+    .cat-card__name {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--forest);
+      margin-bottom: 0.35rem;
+    }
+    .cat-card__desc {
+      font-size: 0.82rem;
+      color: var(--slate);
+      line-height: 1.55;
+    }
+    .cat-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 0.75rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--sage);
+      letter-spacing: 0.01em;
+      transition: gap var(--transition);
+    }
+    .cat-card:hover .cat-card__link { gap: 0.5rem; }
+
+    /* ============================================================
+       FEATURED PICKS
+    ============================================================ */
+    .picks-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .picks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    @media (max-width: 900px) { .picks-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 580px) { .picks-grid { grid-template-columns: 1fr; } }
+
+    .product-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(27,43,31,0.07);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(27,43,31,0.1);
+    }
+    .product-card__thumb {
+      height: 210px;
+      background: var(--cream-dark);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-card__img-placeholder {
+      font-size: 4rem;
+      opacity: 0.28;
+    }
+    /* Weight badge — signature element */
+    .weight-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--forest);
+      color: var(--cream);
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 100px;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .weight-badge::before {
+      content: '↓';
+      font-size: 0.6rem;
+      opacity: 0.7;
+    }
+    .cat-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--sage);
+      color: #fff;
+      font-size: 0.62rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 100px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+    .product-card__body {
+      padding: 1.25rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .product-card__brand {
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.4rem;
+    }
+    .product-card__name {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--forest);
+      line-height: 1.25;
+      margin-bottom: 0.625rem;
+    }
+    .product-card__desc {
+      font-size: 0.86rem;
+      color: var(--slate);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 1.25rem;
+    }
+    .product-card__cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.75rem 1rem;
+      background: var(--forest);
+      color: var(--cream);
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      transition: background var(--transition);
+      letter-spacing: 0.01em;
+    }
+    .product-card__cta:hover { background: var(--sage); }
+
+    /* ============================================================
+       ABOUT TEASER
+    ============================================================ */
+    .about-teaser {
+      background: var(--forest);
+      padding: 6rem 0;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .about-teaser__topo {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+    .about-teaser__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .about-teaser__quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.45;
+      margin-bottom: 1.5rem;
+    }
+    .about-teaser__text {
+      font-size: 0.975rem;
+      color: rgba(244,239,230,0.55);
+      line-height: 1.75;
+      font-weight: 300;
+      margin-bottom: 2.25rem;
+    }
+    .about-teaser__principles {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .principle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.375rem;
+    }
+    .principle__num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--sage-light);
+      line-height: 1;
+    }
+    .principle__label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(244,239,230,0.4);
+    }
+
+    /* ============================================================
+       DISCLOSURE BANNER
+    ============================================================ */
+    .disclosure-bar {
+      background: rgba(27,43,31,0.04);
+      border-top: 1px solid rgba(27,43,31,0.07);
+      border-bottom: 1px solid rgba(27,43,31,0.07);
+      padding: 0.875rem 0;
+    }
+    .disclosure-bar p {
+      font-size: 0.76rem;
+      color: var(--slate);
+      line-height: 1.5;
+      text-align: center;
+    }
+    .disclosure-bar a {
+      color: var(--sage);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      background: var(--forest-deep);
+      padding: 3.5rem 0 2rem;
+    }
+    .footer__top {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 700px) {
+      .footer__top { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    .footer__brand-logo {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.625rem;
+    }
+    .footer__brand-logo span { color: var(--sage-light); }
+    .footer__brand-tagline {
+      font-size: 0.82rem;
+      color: rgba(244,239,230,0.35);
+      line-height: 1.6;
+      max-width: 220px;
+    }
+    .footer__nav-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    @media (max-width: 500px) {
+      .footer__nav-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    }
+    .footer__nav-title {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(244,239,230,0.3);
+      margin-bottom: 0.875rem;
+    }
+    .footer__nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .footer__nav-links a {
+      font-size: 0.85rem;
+      color: rgba(244,239,230,0.5);
+      transition: color var(--transition);
+    }
+    .footer__nav-links a:hover { color: var(--cream); }
+
+    .footer__disclosure {
+      font-size: 0.76rem;
+      color: rgba(244,239,230,0.32);
+      line-height: 1.65;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      margin-bottom: 1.5rem;
+    }
+    .footer__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .footer__copy {
+      font-size: 0.76rem;
+      color: rgba(244,239,230,0.28);
+    }
+    .footer__legal {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .footer__legal a {
+      font-size: 0.76rem;
+      color: rgba(244,239,230,0.32);
+      transition: color var(--transition);
+    }
+    .footer__legal a:hover { color: rgba(244,239,230,0.7); }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <header class="nav" role="banner">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="PackAndWild Home">
+        Pack<span class="nav__logo-accent">&</span>Wild
+      </a>
+
+      <nav class="nav__links" aria-label="Main navigation">
+        <a href="/hiking/" lang="en">Hiking</a>
+        <a href="/de/wandern/" lang="de">Wandern</a>
+        <a href="/vanlife/" lang="en">Van Life</a>
+        <a href="/de/vanlife/" lang="de">Van Life</a>
+        <a href="/camping/" lang="en">Camping</a>
+        <a href="/de/camping/" lang="de">Camping</a>
+        <a href="/edc/" lang="en">EDC</a>
+        <a href="/de/edc/" lang="de">EDC</a>
+        <a href="/travel/" lang="en">Travel</a>
+        <a href="/de/reisen/" lang="de">Reisen</a>
+        <a href="/home/" lang="en">Home</a>
+        <a href="/de/zuhause/" lang="de">Zuhause</a>
+      </nav>
+
+      <div class="nav__right">
+        <div class="lang-pill" role="group" aria-label="Language selection">
+          <button class="lang-pill__btn is-active" id="btn-en" onclick="setLang('en')" aria-label="Switch to English">EN</button>
+          <button class="lang-pill__btn" id="btn-de" onclick="setLang('de')" aria-label="Auf Deutsch wechseln">DE</button>
+        </div>
+        <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <nav class="nav__drawer" id="nav-drawer" aria-label="Mobile navigation">
+      <a href="/hiking/" lang="en">Hiking</a>
+      <a href="/de/wandern/" lang="de">Wandern</a>
+      <a href="/vanlife/" lang="en">Van Life</a>
+      <a href="/de/vanlife/" lang="de">Van Life</a>
+      <a href="/camping/" lang="en">Camping</a>
+      <a href="/de/camping/" lang="de">Camping</a>
+      <a href="/edc/" lang="en">EDC</a>
+      <a href="/de/edc/" lang="de">EDC</a>
+      <a href="/travel/" lang="en">Travel</a>
+      <a href="/de/reisen/" lang="de">Reisen</a>
+      <a href="/home/" lang="en">Home</a>
+      <a href="/de/zuhause/" lang="de">Zuhause</a>
+      <a href="/about/" lang="en">About</a>
+      <a href="/de/ueber-uns/" lang="de">Über uns</a>
+    </nav>
+  </header>
+
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero" aria-label="Hero">
+
+    <!-- Topographic SVG texture -->
+    <svg class="hero__topo" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice"
+         xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Main contour group — organic irregular shapes -->
+      <g fill="none" stroke="rgba(255,255,255,0.055)" stroke-width="1.2">
+        <!-- Outer contours -->
+        <path d="M -80,340 C 80,290 260,360 440,320 C 620,280 780,350 960,310 C 1140,270 1320,330 1520,300"/>
+        <path d="M -80,390 C 100,345 290,410 480,370 C 670,330 840,395 1020,358 C 1200,320 1380,380 1520,355"/>
+        <path d="M -80,440 C 110,398 300,458 490,420 C 680,382 860,445 1040,408 C 1220,370 1390,428 1520,408"/>
+        <path d="M -80,490 C 120,452 320,508 510,472 C 700,434 880,498 1060,460 C 1240,422 1400,478 1520,460"/>
+        <!-- Mid contours -->
+        <path d="M -80,280 C 120,238 320,295 510,258 C 700,220 870,285 1060,248 C 1250,210 1390,265 1520,245"/>
+        <path d="M -80,225 C 130,186 340,238 520,204 C 700,170 890,228 1070,195 C 1250,162 1400,214 1520,196"/>
+        <!-- Upper contours -->
+        <path d="M -80,170 C 140,135 360,182 540,152 C 720,122 910,172 1090,145 C 1270,118 1410,162 1520,148"/>
+        <path d="M -80,118 C 150,88 380,130 560,104 C 740,78 930,120 1110,96 C 1290,72 1420,110 1520,100"/>
+        <!-- Closed "summit" shapes — right side -->
+        <ellipse cx="1050" cy="220" rx="160" ry="70" transform="rotate(-8 1050 220)"/>
+        <ellipse cx="1050" cy="220" rx="100" ry="44" transform="rotate(-8 1050 220)"/>
+        <ellipse cx="1050" cy="220" rx="52"  ry="22" transform="rotate(-8 1050 220)"/>
+        <!-- Closed "summit" shapes — left side -->
+        <ellipse cx="340" cy="420" rx="130" ry="55" transform="rotate(5 340 420)"/>
+        <ellipse cx="340" cy="420" rx="80"  ry="34" transform="rotate(5 340 420)"/>
+        <ellipse cx="340" cy="420" rx="38"  ry="16" transform="rotate(5 340 420)"/>
+      </g>
+      <!-- Subtle gradient overlay — darkens left side so text is more readable -->
+      <defs>
+        <linearGradient id="heroFade" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"   stop-color="#1B2B1F" stop-opacity="0.0"/>
+          <stop offset="55%"  stop-color="#1B2B1F" stop-opacity="0.0"/>
+          <stop offset="100%" stop-color="#1B2B1F" stop-opacity="0.4"/>
+        </linearGradient>
+      </defs>
+      <rect width="1440" height="600" fill="url(#heroFade)"/>
+    </svg>
+
+    <div class="container">
+      <div class="hero__content">
+
+        <span class="hero__eyebrow">
+          <span lang="en">Outdoor Gear &amp; Minimalist Living</span>
+          <span lang="de">Outdoor-Ausrüstung &amp; minimalistisches Leben</span>
+        </span>
+
+        <h1 class="hero__title">
+          <span lang="en">Pack Less.<br><em>Live More.</em></span>
+          <span lang="de">Weniger packen.<br><em>Mehr erleben.</em></span>
+        </h1>
+
+        <p class="hero__sub">
+          <span lang="en">Curated gear for ultralight hikers, van lifers, and minimalist adventurers. We research so you can decide fast and move light.</span>
+          <span lang="de">Kuratierte Ausrüstung für Ultraleichtwanderer, Van Lifer und minimalistische Abenteurer. Wir recherchieren — du entscheidest schnell und gehst leicht.</span>
+        </p>
+
+        <div class="hero__ctas">
+          <a href="#categories" class="btn btn--primary">
+            <span lang="en">Explore Gear</span>
+            <span lang="de">Ausrüstung entdecken</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <a href="#picks" class="btn btn--ghost">
+            <span lang="en">Our Top Picks</span>
+            <span lang="de">Unsere Empfehlungen</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <div class="hero__scroll-line"></div>
+      <span lang="en">Scroll</span>
+      <span lang="de">Scrollen</span>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       AFFILIATE DISCLOSURE BAR
+  ============================================================ -->
+  <div class="disclosure-bar" role="note">
+    <div class="container">
+      <p lang="en">
+        <strong>Affiliate Disclosure:</strong> PackAndWild uses affiliate links. We may earn a small commission when you purchase through our links — at no extra cost to you.
+        <a href="/about/#disclosure">Learn more</a>
+      </p>
+      <p lang="de">
+        <strong>Affiliate-Hinweis:</strong> PackAndWild verwendet Affiliate-Links. Beim Kauf über unsere Links erhalten wir eine kleine Provision — ohne Mehrkosten für dich.
+        <a href="/de/ueber-uns/#disclosure">Mehr erfahren</a>
+      </p>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       CATEGORIES
+  ============================================================ -->
+  <section class="section" id="categories" aria-labelledby="categories-heading">
+    <div class="container">
+
+      <div>
+        <span class="section-label">
+          <span lang="en">Browse by Category</span>
+          <span lang="de">Nach Kategorie stöbern</span>
+        </span>
+        <h2 class="section-title" id="categories-heading">
+          <span lang="en">Find Your Gear</span>
+          <span lang="de">Deine Ausrüstung finden</span>
+        </h2>
+        <p class="section-sub">
+          <span lang="en">Six curated niches. Only gear that earns its place in the pack.</span>
+          <span lang="de">Sechs kuratierte Bereiche. Nur Ausrüstung, die ihren Platz im Rucksack verdient.</span>
+        </p>
+      </div>
+
+      <div class="category-grid">
+
+        <!-- Hiking -->
+        <a href="/hiking/" class="cat-card cat-card--hiking" aria-label="Ultralight Hiking">
+          <div class="cat-card__thumb">
+            <span class="cat-card__emoji" aria-hidden="true">🥾</span>
+          </div>
+          <div class="cat-card__body">
+            <div class="cat-card__name">
+              <span lang="en">Ultralight Hiking</span>
+              <span lang="de">Ultraleichtes Wandern</span>
+            </div>
+            <p class="cat-card__desc">
+              <span lang="en">Packs, boots, trekking poles, and shelter for those who count every gram.</span>
+              <span lang="de">Rucksäcke, Schuhe, Stöcke und Unterkunft für alle, die jedes Gramm zählen.</span>
+            </p>
+            <span class="cat-card__link">
+              <span lang="en">Browse Hiking</span>
+              <span lang="de">Wandern entdecken</span>
+              →
+            </span>
+          </div>
+        </a>
+
+        <!-- Van Life -->
+        <a href="/vanlife/" class="cat-card cat-card--vanlife" aria-label="Van Life">
+          <div class="cat-card__thumb">
+            <span class="cat-card__emoji" aria-hidden="true">🚐</span>
+          </div>
+          <div class="cat-card__body">
+            <div class="cat-card__name">Van Life</div>
+            <p class="cat-card__desc">
+              <span lang="en">Power, cooking, storage, and sleep systems for life on the road.</span>
+              <span lang="de">Strom, Kochen, Stauraum und Schlafmöglichkeiten für das Leben auf der Straße.</span>
+            </p>
+            <span class="cat-card__link">
+              <span lang="en">Browse Van Life</span>
+              <span lang="de">Van Life entdecken</span>
+              →
+            </span>
+          </div>
+        </a>
+
+        <!-- Camping -->
+        <a href="/camping/" class="cat-card cat-card--camping" aria-label="Minimalist Camping">
+          <div class="cat-card__thumb">
+            <span class="cat-card__emoji" aria-hidden="true">⛺</span>
+          </div>
+          <div class="cat-card__body">
+            <div class="cat-card__name">
+              <span lang="en">Minimalist Camping</span>
+              <span lang="de">Minimalistisches Camping</span>
+            </div>
+            <p class="cat-card__desc">
+              <span lang="en">Stoves, cookware, lighting, and camp furniture that do more with less.</span>
+              <span lang="de">Kocher, Kochgeschirr, Licht und Campingmöbel, die mehr mit weniger leisten.</span>
+            </p>
+            <span class="cat-card__link">
+              <span lang="en">Browse Camping</span>
+              <span lang="de">Camping entdecken</span>
+              →
+            </span>
+          </div>
+        </a>
+
+        <!-- EDC -->
+        <a href="/edc/" class="cat-card cat-card--edc" aria-label="Outdoor EDC">
+          <div class="cat-card__thumb">
+            <span class="cat-card__emoji" aria-hidden="true">🔦</span>
+          </div>
+          <div class="cat-card__body">
+            <div class="cat-card__name">Outdoor EDC</div>
+            <p class="cat-card__desc">
+              <span lang="en">Flashlights, knives, multitools, and everyday carry built for the outdoors.</span>
+              <span lang="de">Taschenlampen, Messer, Multitools und EDC speziell für draußen.</span>
+            </p>
+            <span class="cat-card__link">
+              <span lang="en">Browse EDC</span>
+              <span lang="de">EDC entdecken</span>
+              →
+            </span>
+          </div>
+        </a>
+
+        <!-- Travel -->
+        <a href="/travel/" class="cat-card cat-card--travel" aria-label="Pack Light Travel">
+          <div class="cat-card__thumb">
+            <span class="cat-card__emoji" aria-hidden="true">✈️</span>
+          </div>
+          <div class="cat-card__body">
+            <div class="cat-card__name">
+              <span lang="en">Pack Light Travel</span>
+              <span lang="de">Leichtes Reisen</span>
+            </div>
+            <p class="cat-card__desc">
+              <span lang="en">Carry-on bags, travel accessories, and eSIMs for one-bag travellers.</span>
+              <span lang="de">Handgepäck, Reisezubehör und eSIMs für One-Bag-Reisende.</span>
+            </p>
+            <span class="cat-card__link">
+              <span lang="en">Browse Travel</span>
+              <span lang="de">Reisen entdecken</span>
+              →
+            </span>
+          </div>
+        </a>
+
+        <!-- Home -->
+        <a href="/home/" class="cat-card cat-card--home" aria-label="Minimalist Home">
+          <div class="cat-card__thumb">
+            <span class="cat-card__emoji" aria-hidden="true">🏡</span>
+          </div>
+          <div class="cat-card__body">
+            <div class="cat-card__name">
+              <span lang="en">Minimalist Home</span>
+              <span lang="de">Minimalistisches Zuhause</span>
+            </div>
+            <p class="cat-card__desc">
+              <span lang="en">Furniture, organisation, and home essentials for those who own less but better.</span>
+              <span lang="de">Möbel, Organisation und Einrichtung für alle, die weniger aber Besseres besitzen.</span>
+            </p>
+            <span class="cat-card__link">
+              <span lang="en">Browse Home</span>
+              <span lang="de">Zuhause entdecken</span>
+              →
+            </span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FEATURED PICKS
+  ============================================================ -->
+  <section class="section section--alt" id="picks" aria-labelledby="picks-heading">
+    <div class="container">
+
+      <div class="picks-header">
+        <div>
+          <span class="section-label">
+            <span lang="en">Editor's Selection</span>
+            <span lang="de">Redaktionsauswahl</span>
+          </span>
+          <h2 class="section-title" id="picks-heading">
+            <span lang="en">Top Picks This Season</span>
+            <span lang="de">Top-Empfehlungen dieser Saison</span>
+          </h2>
+          <p class="section-sub">
+            <span lang="en">Tested, researched, and worth every cent.</span>
+            <span lang="de">Getestet, recherchiert und jeden Cent wert.</span>
+          </p>
+        </div>
+        <a href="/hiking/" class="btn btn--sage" style="flex-shrink:0">
+          <span lang="en">View all picks →</span>
+          <span lang="de">Alle ansehen →</span>
+        </a>
+      </div>
+
+      <div class="picks-grid">
+
+        <!-- Pick 1: Osprey Exos 38 -->
+        <div class="product-card">
+          <div class="product-card__thumb">
+            <span class="product-card__img-placeholder" aria-hidden="true">🎒</span>
+            <span class="weight-badge" aria-label="Weight: 1.06 kg">1.06 kg</span>
+            <span class="cat-tag">Hiking</span>
+          </div>
+          <div class="product-card__body">
+            <div class="product-card__brand">Osprey</div>
+            <div class="product-card__name">Exos 38</div>
+            <p class="product-card__desc">
+              <span lang="en">The benchmark for trail-ready ultralight packs. AirSpeed suspension, roll-top lid, and integrated rain cover — all under 1.1 kg. Hard to beat for 3-season hiking.</span>
+              <span lang="de">Der Maßstab für ultraleichte Trailrucksäcke. AirSpeed-Aufhängung, Roll-Top-Deckel und integrierte Regenhülle — alles unter 1,1 kg. Für 3-Saison-Wanderungen kaum zu schlagen.</span>
+            </p>
+            <a href="#" class="product-card__cta" rel="nofollow sponsored">
+              <span lang="en">View Deal</span>
+              <span lang="de">Angebot ansehen</span>
+              →
+            </a>
+          </div>
+        </div>
+
+        <!-- Pick 2: BioLite CampStove 2+ -->
+        <div class="product-card">
+          <div class="product-card__thumb">
+            <span class="product-card__img-placeholder" aria-hidden="true">🔥</span>
+            <span class="weight-badge" aria-label="Weight: 935 g">935 g</span>
+            <span class="cat-tag">Camping</span>
+          </div>
+          <div class="product-card__body">
+            <div class="product-card__brand">BioLite</div>
+            <div class="product-card__name">CampStove 2+</div>
+            <p class="product-card__desc">
+              <span lang="en">Burns sticks, charges devices, and lights your camp — one piece of kit. The thermoelectric generator turns fire into USB power. Ideal for van life and base camp setups.</span>
+              <span lang="de">Verbrennt Äste, lädt Geräte und beleuchtet das Camp — ein einziges Gerät. Der thermoelektrische Generator wandelt Feuer in USB-Strom. Ideal für Van Life und Basiscamps.</span>
+            </p>
+            <a href="#" class="product-card__cta" rel="nofollow sponsored">
+              <span lang="en">View Deal</span>
+              <span lang="de">Angebot ansehen</span>
+              →
+            </a>
+          </div>
+        </div>
+
+        <!-- Pick 3: Olight i3T EOS -->
+        <div class="product-card">
+          <div class="product-card__thumb">
+            <span class="product-card__img-placeholder" aria-hidden="true">🔦</span>
+            <span class="weight-badge" aria-label="Weight: 14 g">14 g</span>
+            <span class="cat-tag">EDC</span>
+          </div>
+          <div class="product-card__body">
+            <div class="product-card__brand">Olight</div>
+            <div class="product-card__name">i3T EOS</div>
+            <p class="product-card__desc">
+              <span lang="en">180 lumens from a 14 g keychain light. Anodized aluminum body, twist switch, 45-day runtime on low. The one flashlight you'll actually carry every day.</span>
+              <span lang="de">180 Lumen aus einem 14-g-Schlüsselbundlicht. Eloxiertes Aluminiumgehäuse, Drehschalter, 45 Tage Laufzeit auf niedrig. Die eine Taschenlampe, die du täglich trägst.</span>
+            </p>
+            <a href="#" class="product-card__cta" rel="nofollow sponsored">
+              <span lang="en">View Deal</span>
+              <span lang="de">Angebot ansehen</span>
+              →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ABOUT TEASER
+  ============================================================ -->
+  <section class="about-teaser" aria-labelledby="about-heading">
+
+    <!-- Subtle topo repeat -->
+    <svg class="about-teaser__topo" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMid slice"
+         xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.2">
+        <path d="M -80,100 C 200,65 500,120 800,90 C 1100,60 1300,105 1520,88"/>
+        <path d="M -80,155 C 200,120 520,175 820,145 C 1120,115 1320,160 1520,143"/>
+        <path d="M -80,210 C 220,178 540,228 840,200 C 1140,170 1340,215 1520,198"/>
+        <path d="M -80,265 C 240,235 560,282 860,255 C 1160,228 1350,268 1520,253"/>
+        <path d="M -80,318 C 260,290 580,335 880,310 C 1180,284 1360,322 1520,308"/>
+      </g>
+    </svg>
+
+    <div class="container">
+      <div class="about-teaser__inner">
+
+        <span class="section-label section-label--light" id="about-heading">
+          <span lang="en">About PackAndWild</span>
+          <span lang="de">Über PackAndWild</span>
+        </span>
+
+        <p class="about-teaser__quote">
+          <span lang="en">"We research, carry, and test gear so you pack smarter."</span>
+          <span lang="de">„Wir recherchieren, tragen und testen Ausrüstung, damit du intelligenter packst."</span>
+        </p>
+
+        <p class="about-teaser__text">
+          <span lang="en">PackAndWild was built by outdoor obsessives who got tired of carrying too much. We believe the best gear earns its spot in your pack — nothing more, nothing less. Every recommendation on this site has been researched, compared, and stress-tested against the alternatives.</span>
+          <span lang="de">PackAndWild wurde von Outdoor-Enthusiasten gegründet, die es leid waren, zu viel zu schleppen. Wir glauben, dass die beste Ausrüstung ihren Platz im Rucksack verdient — nicht mehr und nicht weniger. Jede Empfehlung auf dieser Website wurde recherchiert, verglichen und gegen Alternativen getestet.</span>
+        </p>
+
+        <div class="about-teaser__principles" role="list">
+          <div class="principle" role="listitem">
+            <span class="principle__num">01</span>
+            <span class="principle__label" lang="en">Less Weight</span>
+            <span class="principle__label" lang="de">Weniger Gewicht</span>
+          </div>
+          <div class="principle" role="listitem">
+            <span class="principle__num">02</span>
+            <span class="principle__label" lang="en">Better Choice</span>
+            <span class="principle__label" lang="de">Bessere Wahl</span>
+          </div>
+          <div class="principle" role="listitem">
+            <span class="principle__num">03</span>
+            <span class="principle__label" lang="en">More Trail</span>
+            <span class="principle__label" lang="de">Mehr Trail</span>
+          </div>
+        </div>
+
+        <a href="/about/" class="btn btn--ghost">
+          <span lang="en">Our Story →</span>
+          <span lang="de">Unsere Geschichte →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer__top">
+
+        <div>
+          <div class="footer__brand-logo">
+            Pack<span>&</span>Wild
+          </div>
+          <p class="footer__brand-tagline">
+            <span lang="en">Curated outdoor gear &amp; minimalist living — since 2024.</span>
+            <span lang="de">Kuratierte Outdoor-Ausrüstung &amp; minimalistisches Leben — seit 2024.</span>
+          </p>
+        </div>
+
+        <div class="footer__nav-grid">
+          <div>
+            <div class="footer__nav-title" lang="en">Categories</div>
+            <div class="footer__nav-title" lang="de">Kategorien</div>
+            <div class="footer__nav-links">
+              <a href="/hiking/"><span lang="en">Hiking</span><span lang="de">Wandern</span></a>
+              <a href="/vanlife/">Van Life</a>
+              <a href="/camping/"><span lang="en">Camping</span><span lang="de">Camping</span></a>
+              <a href="/edc/">EDC</a>
+              <a href="/travel/"><span lang="en">Travel</span><span lang="de">Reisen</span></a>
+              <a href="/home/"><span lang="en">Home</span><span lang="de">Zuhause</span></a>
+            </div>
+          </div>
+          <div>
+            <div class="footer__nav-title" lang="en">Site</div>
+            <div class="footer__nav-title" lang="de">Seite</div>
+            <div class="footer__nav-links">
+              <a href="/about/"><span lang="en">About Us</span><span lang="de">Über uns</span></a>
+              <a href="/about/#disclosure"><span lang="en">Disclosure</span><span lang="de">Hinweise</span></a>
+              <a href="/privacy/"><span lang="en">Privacy Policy</span><span lang="de">Datenschutz</span></a>
+              <a href="/imprint/"><span lang="en">Imprint</span><span lang="de">Impressum</span></a>
+            </div>
+          </div>
+          <div>
+            <div class="footer__nav-title" lang="en">Language</div>
+            <div class="footer__nav-title" lang="de">Sprache</div>
+            <div class="footer__nav-links">
+              <a href="/" lang="en" onclick="setLang('en'); return true;">🇬🇧 English</a>
+              <a href="/de/" lang="de" onclick="setLang('de'); return true;">🇩🇪 Deutsch</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer__disclosure">
+        <p lang="en">
+          <strong>Affiliate Disclosure:</strong> PackAndWild participates in affiliate advertising programs, including those of AWIN partner merchants. When you click on links on this site and make a purchase, we may receive a small commission at no additional cost to you. This helps us keep our content free and our recommendations independent. We only recommend products we have genuinely researched and believe in.
+        </p>
+        <p lang="de">
+          <strong>Affiliate-Hinweis:</strong> PackAndWild nimmt an Affiliate-Werbeprogrammen teil, unter anderem von AWIN-Partnerhändlern. Wenn du auf Links auf dieser Website klickst und einen Kauf tätigst, erhalten wir möglicherweise eine kleine Provision ohne zusätzliche Kosten für dich. Dies hilft uns, unsere Inhalte kostenlos zu halten und unsere Empfehlungen unabhängig zu gestalten. Wir empfehlen nur Produkte, die wir wirklich recherchiert haben und von denen wir überzeugt sind.
+        </p>
+      </div>
+
+      <div class="footer__bottom">
+        <span class="footer__copy">
+          <span lang="en">© 2024 PackAndWild. All rights reserved.</span>
+          <span lang="de">© 2024 PackAndWild. Alle Rechte vorbehalten.</span>
+        </span>
+        <nav class="footer__legal" aria-label="Legal links">
+          <a href="/privacy/"><span lang="en">Privacy</span><span lang="de">Datenschutz</span></a>
+          <a href="/imprint/"><span lang="en">Imprint</span><span lang="de">Impressum</span></a>
+          <a href="/about/#disclosure"><span lang="en">Disclosure</span><span lang="de">Hinweise</span></a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT — Language toggle + Mobile nav
+  ============================================================ -->
+  <script>
+    // ── Language toggle ──────────────────────────────────────────
+    function setLang(lang) {
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.setAttribute('lang', lang);
+
+      const btnEn = document.getElementById('btn-en');
+      const btnDe = document.getElementById('btn-de');
+      if (lang === 'en') {
+        btnEn.classList.add('is-active');
+        btnDe.classList.remove('is-active');
+      } else {
+        btnDe.classList.add('is-active');
+        btnEn.classList.remove('is-active');
+      }
+
+      // Persist choice for session
+      try { localStorage.setItem('paw-lang', lang); } catch(e) {}
+    }
+
+    // Restore saved preference
+    (function() {
+      try {
+        const saved = localStorage.getItem('paw-lang');
+        if (saved === 'de') setLang('de');
+      } catch(e) {}
+    })();
+
+    // ── Mobile nav hamburger ──────────────────────────────────────
+    const hamburger = document.getElementById('hamburger');
+    const drawer    = document.getElementById('nav-drawer');
+
+    hamburger.addEventListener('click', function() {
+      const isOpen = drawer.classList.toggle('is-open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close drawer on link click
+    drawer.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        drawer.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Close drawer on outside click
+    document.addEventListener('click', function(e) {
+      if (!hamburger.contains(e.target) && !drawer.contains(e.target)) {
+        drawer.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+
+</body>
+</html>

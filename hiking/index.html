@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title lang="en">Ultralight Hiking Gear — PackAndWild</title>
+  <meta name="description" content="Curated ultralight hiking gear: packs, boots, poles, tents, and shelter. Only the essentials, tested and compared.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://packandwild.de/hiking/">
+  <link rel="alternate" hreflang="en" href="https://packandwild.de/hiking/">
+  <link rel="alternate" hreflang="de" href="https://packandwild.de/de/wandern/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       TOKENS — identical to homepage
+    ============================================================ */
+    :root {
+      --forest:       #1B2B1F;
+      --forest-deep:  #131F16;
+      --forest-mid:   #243728;
+      --sage:         #4A6741;
+      --sage-light:   #6A9460;
+      --cream:        #F4EFE6;
+      --cream-dark:   #EBE5DB;
+      --white:        #FAFAF8;
+      --slate:        #5C6B7A;
+      --bark:         #8B6347;
+      --bark-light:   #9E7259;
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --transition: 0.22s ease;
+      --max-w: 1200px;
+      --nav-h: 68px;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--forest);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+    button { font-family: var(--font-body); cursor: pointer; }
+
+    /* ============================================================
+       LANGUAGE
+    ============================================================ */
+    html[data-lang="en"] [lang="de"] { display: none !important; }
+    html[data-lang="de"] [lang="en"] { display: none !important; }
+
+    /* ============================================================
+       LAYOUT
+    ============================================================ */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    @media (max-width: 600px) { .container { padding: 0 1.25rem; } }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 1.75rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border-radius: var(--radius-sm);
+      border: none;
+      transition: all var(--transition);
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .btn--primary { background: var(--bark); color: var(--white); }
+    .btn--primary:hover { background: var(--bark-light); transform: translateY(-1px); }
+    .btn--ghost { background: transparent; color: var(--cream); border: 1px solid rgba(244,239,230,0.25); }
+    .btn--ghost:hover { border-color: rgba(244,239,230,0.6); background: rgba(244,239,230,0.06); }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      height: var(--nav-h);
+      background: var(--forest);
+      display: flex;
+      align-items: center;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.04);
+    }
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 2rem;
+      gap: 1.5rem;
+    }
+    .nav__logo {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+    .nav__logo-accent { color: var(--sage-light); }
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .nav__links a {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: rgba(244,239,230,0.65);
+      border-radius: var(--radius-sm);
+      transition: all var(--transition);
+    }
+    .nav__links a:hover,
+    .nav__links a.is-current {
+      color: var(--cream);
+      background: rgba(255,255,255,0.05);
+    }
+    .nav__links a.is-current { color: var(--sage-light); }
+    .nav__right { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+    .lang-pill {
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.07);
+      border-radius: 100px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .lang-pill__btn {
+      background: none;
+      border: none;
+      color: rgba(244,239,230,0.45);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 0.3rem 0.65rem;
+      border-radius: 100px;
+      transition: all var(--transition);
+    }
+    .lang-pill__btn.is-active { background: var(--sage); color: #fff; }
+    .lang-pill__btn:hover:not(.is-active) { color: rgba(244,239,230,0.8); }
+    .nav__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      padding: 6px;
+    }
+    .nav__hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: rgba(244,239,230,0.7);
+      border-radius: 2px;
+    }
+    .nav__drawer {
+      display: none;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0; right: 0;
+      background: var(--forest-mid);
+      padding: 1rem 2rem 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      z-index: 199;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+    }
+    .nav__drawer.is-open { display: block; }
+    .nav__drawer a {
+      display: block;
+      padding: 0.75rem 0;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: rgba(244,239,230,0.75);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: color var(--transition);
+    }
+    .nav__drawer a:hover { color: var(--cream); }
+    @media (max-width: 900px) {
+      .nav__links { display: none; }
+      .nav__hamburger { display: flex; }
+    }
+    @media (max-width: 600px) { .nav__inner { padding: 0 1.25rem; } }
+
+    /* ============================================================
+       PAGE BANNER (category hero — smaller than homepage)
+    ============================================================ */
+    .page-banner {
+      background: var(--forest);
+      padding: 4.5rem 0 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-banner__topo {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .page-banner__inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: rgba(244,239,230,0.4);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .breadcrumb a {
+      color: rgba(244,239,230,0.4);
+      transition: color var(--transition);
+    }
+    .breadcrumb a:hover { color: var(--sage-light); }
+    .breadcrumb__sep { opacity: 0.4; }
+    .page-banner__eyebrow {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage-light);
+      margin-bottom: 0.625rem;
+    }
+    .page-banner__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+    .page-banner__sub {
+      font-size: 1rem;
+      color: rgba(244,239,230,0.6);
+      max-width: 500px;
+      font-weight: 300;
+      line-height: 1.65;
+    }
+    .page-banner__stat {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.25rem;
+      flex-shrink: 0;
+    }
+    .page-banner__stat-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--sage-light);
+      line-height: 1;
+    }
+    .page-banner__stat-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(244,239,230,0.35);
+    }
+    @media (max-width: 600px) { .page-banner__stat { display: none; } }
+
+    /* ============================================================
+       DISCLOSURE BAR
+    ============================================================ */
+    .disclosure-bar {
+      background: rgba(27,43,31,0.04);
+      border-top: 1px solid rgba(27,43,31,0.07);
+      border-bottom: 1px solid rgba(27,43,31,0.07);
+      padding: 0.875rem 0;
+    }
+    .disclosure-bar p {
+      font-size: 0.76rem;
+      color: var(--slate);
+      line-height: 1.5;
+      text-align: center;
+    }
+    .disclosure-bar a { color: var(--sage); text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ============================================================
+       INTRO SECTION
+    ============================================================ */
+    .intro-section {
+      padding: 3.5rem 0 2.5rem;
+      border-bottom: 1px solid rgba(27,43,31,0.07);
+    }
+    .intro-section__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    @media (max-width: 700px) {
+      .intro-section__inner { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    .intro-section__lead {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--forest);
+      line-height: 1.5;
+    }
+    .intro-section__body {
+      font-size: 0.95rem;
+      color: var(--slate);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+    .intro-section__body p + p { margin-top: 1rem; }
+    .intro-section__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+    .tag {
+      padding: 0.3rem 0.75rem;
+      background: rgba(74,103,65,0.1);
+      color: var(--sage);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      border-radius: 100px;
+    }
+
+    /* ============================================================
+       PRODUCT GRID — category page layout
+    ============================================================ */
+    .products-section { padding: 3rem 0 4rem; }
+    .products-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .section-label {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.4rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .sort-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .sort-bar__label {
+      font-size: 0.78rem;
+      color: var(--slate);
+      font-weight: 500;
+    }
+    .sort-btn {
+      padding: 0.35rem 0.875rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: 1px solid rgba(27,43,31,0.12);
+      border-radius: 100px;
+      background: none;
+      color: var(--slate);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .sort-btn:hover,
+    .sort-btn.is-active { background: var(--forest); color: var(--cream); border-color: var(--forest); }
+
+    /* Product grid — 2 columns on desktop, 1 on mobile */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 700px) { .product-grid { grid-template-columns: 1fr; } }
+
+    /* ── Product card — horizontal layout ── */
+    .prod-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(27,43,31,0.07);
+      display: flex;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .prod-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 36px rgba(27,43,31,0.1);
+    }
+    .prod-card__thumb {
+      width: 200px;
+      min-width: 200px;
+      background: var(--cream-dark);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    @media (max-width: 500px) {
+      .prod-card { flex-direction: column; }
+      .prod-card__thumb { width: 100%; min-width: auto; height: 180px; }
+    }
+    .prod-card__placeholder {
+      font-size: 3.5rem;
+      opacity: 0.28;
+    }
+    /* Weight badge */
+    .weight-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--forest);
+      color: var(--cream);
+      font-size: 0.67rem;
+      font-weight: 700;
+      padding: 0.22rem 0.6rem;
+      border-radius: 100px;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+    .weight-badge::before { content: '↓'; font-size: 0.58rem; opacity: 0.65; }
+
+    /* Merchant badge */
+    .merchant-badge {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(255,255,255,0.9);
+      color: var(--forest);
+      font-size: 0.62rem;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      border-radius: 100px;
+      letter-spacing: 0.04em;
+      backdrop-filter: blur(4px);
+    }
+
+    .prod-card__body {
+      padding: 1.375rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .prod-card__meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    .prod-card__brand {
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .prod-card__rating {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.75rem;
+      color: var(--bark);
+      font-weight: 600;
+    }
+    .prod-card__name {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--forest);
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+    .prod-card__tagline {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--slate);
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+    .prod-card__desc {
+      font-size: 0.84rem;
+      color: var(--slate);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+    .prod-card__highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.375rem;
+      margin-bottom: 1rem;
+    }
+    .highlight {
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      letter-spacing: 0.03em;
+    }
+    .highlight--pro { background: rgba(74,103,65,0.1); color: var(--sage); }
+    .highlight--con { background: rgba(92,107,122,0.1); color: var(--slate); }
+    .prod-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .prod-card__price-info {
+      font-size: 0.75rem;
+      color: var(--slate);
+    }
+    .prod-card__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.65rem 1.125rem;
+      background: var(--forest);
+      color: var(--cream);
+      font-size: 0.82rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      transition: background var(--transition);
+      letter-spacing: 0.01em;
+    }
+    .prod-card__cta:hover { background: var(--sage); }
+
+    /* ============================================================
+       WHY WE RECOMMEND
+    ============================================================ */
+    .why-section {
+      background: var(--forest);
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .why-section__topo {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .why-section__inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    @media (max-width: 800px) {
+      .why-section__inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+    .why-section__label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage-light);
+      margin-bottom: 0.75rem;
+    }
+    .why-section__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+    .why-section__text {
+      font-size: 0.95rem;
+      color: rgba(244,239,230,0.55);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+    .why-section__text p + p { margin-top: 1rem; }
+    .why-criteria {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .criterion {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+    .criterion__num {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--sage-light);
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 2rem;
+    }
+    .criterion__content {}
+    .criterion__title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 0.3rem;
+    }
+    .criterion__desc {
+      font-size: 0.84rem;
+      color: rgba(244,239,230,0.5);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* ============================================================
+       MERCHANTS STRIP
+    ============================================================ */
+    .merchants-strip {
+      background: var(--white);
+      padding: 2rem 0;
+      border-bottom: 1px solid rgba(27,43,31,0.07);
+    }
+    .merchants-strip__inner {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .merchants-strip__label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(27,43,31,0.35);
+      flex-shrink: 0;
+    }
+    .merchants-strip__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.625rem;
+    }
+    .merchant-pill {
+      padding: 0.35rem 1rem;
+      border: 1px solid rgba(27,43,31,0.12);
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--slate);
+      transition: all var(--transition);
+    }
+    .merchant-pill:hover {
+      border-color: var(--sage);
+      color: var(--sage);
+      background: rgba(74,103,65,0.05);
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      background: var(--forest-deep);
+      padding: 3.5rem 0 2rem;
+    }
+    .footer__top {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 700px) { .footer__top { grid-template-columns: 1fr; gap: 2rem; } }
+    .footer__brand-logo {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.625rem;
+    }
+    .footer__brand-logo span { color: var(--sage-light); }
+    .footer__brand-tagline {
+      font-size: 0.82rem;
+      color: rgba(244,239,230,0.35);
+      line-height: 1.6;
+      max-width: 220px;
+    }
+    .footer__nav-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    @media (max-width: 500px) { .footer__nav-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
+    .footer__nav-title {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: rgba(244,239,230,0.3);
+      margin-bottom: 0.875rem;
+    }
+    .footer__nav-links { display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer__nav-links a {
+      font-size: 0.85rem;
+      color: rgba(244,239,230,0.5);
+      transition: color var(--transition);
+    }
+    .footer__nav-links a:hover { color: var(--cream); }
+    .footer__disclosure {
+      font-size: 0.76rem;
+      color: rgba(244,239,230,0.32);
+      line-height: 1.65;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      margin-bottom: 1.5rem;
+    }
+    .footer__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .footer__copy { font-size: 0.76rem; color: rgba(244,239,230,0.28); }
+    .footer__legal { display: flex; gap: 1.5rem; }
+    .footer__legal a {
+      font-size: 0.76rem;
+      color: rgba(244,239,230,0.32);
+      transition: color var(--transition);
+    }
+    .footer__legal a:hover { color: rgba(244,239,230,0.7); }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <header class="nav" role="banner">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="PackAndWild Home">
+        Pack<span class="nav__logo-accent">&</span>Wild
+      </a>
+
+      <nav class="nav__links" aria-label="Main navigation">
+        <a href="/hiking/" class="is-current" lang="en" aria-current="page">Hiking</a>
+        <a href="/de/wandern/" class="is-current" lang="de" aria-current="page">Wandern</a>
+        <a href="/vanlife/" lang="en">Van Life</a>
+        <a href="/de/vanlife/" lang="de">Van Life</a>
+        <a href="/camping/" lang="en">Camping</a>
+        <a href="/de/camping/" lang="de">Camping</a>
+        <a href="/edc/" lang="en">EDC</a>
+        <a href="/de/edc/" lang="de">EDC</a>
+        <a href="/travel/" lang="en">Travel</a>
+        <a href="/de/reisen/" lang="de">Reisen</a>
+        <a href="/home/" lang="en">Home</a>
+        <a href="/de/zuhause/" lang="de">Zuhause</a>
+      </nav>
+
+      <div class="nav__right">
+        <div class="lang-pill" role="group" aria-label="Language selection">
+          <button class="lang-pill__btn is-active" id="btn-en" onclick="setLang('en')">EN</button>
+          <button class="lang-pill__btn" id="btn-de" onclick="setLang('de')">DE</button>
+        </div>
+        <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="nav__drawer" id="nav-drawer" aria-label="Mobile navigation">
+      <a href="/hiking/"><span lang="en">Hiking</span><span lang="de">Wandern</span></a>
+      <a href="/vanlife/">Van Life</a>
+      <a href="/camping/"><span lang="en">Camping</span><span lang="de">Camping</span></a>
+      <a href="/edc/">EDC</a>
+      <a href="/travel/"><span lang="en">Travel</span><span lang="de">Reisen</span></a>
+      <a href="/home/"><span lang="en">Home</span><span lang="de">Zuhause</span></a>
+      <a href="/about/"><span lang="en">About</span><span lang="de">Über uns</span></a>
+    </nav>
+  </header>
+
+
+  <!-- ============================================================
+       PAGE BANNER
+  ============================================================ -->
+  <section class="page-banner" aria-label="Category header">
+
+    <svg class="page-banner__topo" viewBox="0 0 1440 280" preserveAspectRatio="xMidYMid slice"
+         xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1.2">
+        <path d="M -80,80  C 200,50  500,100 800,72  C 1100,44  1320,88  1520,70"/>
+        <path d="M -80,130 C 200,102 520,150 820,124 C 1120,98  1340,140 1520,122"/>
+        <path d="M -80,180 C 220,154 540,200 840,176 C 1140,152 1350,192 1520,174"/>
+        <path d="M -80,228 C 240,204 560,248 860,226 C 1160,204 1360,240 1520,224"/>
+        <ellipse cx="1150" cy="100" rx="180" ry="62" transform="rotate(-6 1150 100)"/>
+        <ellipse cx="1150" cy="100" rx="110" ry="38" transform="rotate(-6 1150 100)"/>
+        <ellipse cx="1150" cy="100" rx="55"  ry="19" transform="rotate(-6 1150 100)"/>
+      </g>
+    </svg>
+
+    <div class="container">
+      <div class="page-banner__inner">
+        <div>
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">PackAndWild</a>
+            <span class="breadcrumb__sep" aria-hidden="true">›</span>
+            <span lang="en">Ultralight Hiking</span>
+            <span lang="de">Ultraleichtes Wandern</span>
+          </nav>
+
+          <div class="page-banner__eyebrow">
+            <span lang="en">Gear Guide</span>
+            <span lang="de">Ausrüstungsguide</span>
+          </div>
+
+          <h1 class="page-banner__title">
+            <span lang="en">Ultralight Hiking</span>
+            <span lang="de">Ultraleichtes Wandern</span>
+          </h1>
+
+          <p class="page-banner__sub">
+            <span lang="en">The best packs, boots, poles, and shelter for hikers who count every gram — without sacrificing comfort or durability.</span>
+            <span lang="de">Die besten Rucksäcke, Schuhe, Stöcke und Unterkunft für Wanderer, die jedes Gramm zählen — ohne Komfort oder Langlebigkeit zu opfern.</span>
+          </p>
+        </div>
+
+        <div class="page-banner__stat" aria-hidden="true">
+          <span class="page-banner__stat-num">6</span>
+          <span class="page-banner__stat-label" lang="en">Curated Picks</span>
+          <span class="page-banner__stat-label" lang="de">Kuratierte Picks</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       DISCLOSURE BAR
+  ============================================================ -->
+  <div class="disclosure-bar" role="note">
+    <div class="container">
+      <p lang="en"><strong>Affiliate Disclosure:</strong> PackAndWild uses affiliate links. We may earn a small commission on purchases — at no extra cost to you. <a href="/about/#disclosure">Learn more</a></p>
+      <p lang="de"><strong>Affiliate-Hinweis:</strong> PackAndWild verwendet Affiliate-Links. Beim Kauf erhalten wir eine kleine Provision — ohne Mehrkosten für dich. <a href="/de/ueber-uns/#disclosure">Mehr erfahren</a></p>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       INTRO
+  ============================================================ -->
+  <div class="intro-section">
+    <div class="container">
+      <div class="intro-section__inner">
+        <div>
+          <p class="intro-section__lead">
+            <span lang="en">"Go light. Stay long. Move fast."</span>
+            <span lang="de">„Leicht gehen. Länger bleiben. Schneller werden."</span>
+          </p>
+          <div class="intro-section__tags">
+            <span class="tag">Ultralight</span>
+            <span class="tag">3-Season</span>
+            <span class="tag">DACH</span>
+            <span class="tag" lang="en">Trail Tested</span>
+            <span class="tag" lang="de">Trail-getestet</span>
+          </div>
+        </div>
+        <div class="intro-section__body">
+          <p lang="en">
+            Ultralight hiking isn't about going cheap — it's about being intentional. Every item you carry should justify its weight with function, durability, or both. The right gear lets you push further, recover faster, and enjoy the trail rather than fight it.
+          </p>
+          <p lang="en">
+            Our picks focus on the sweet spot between genuine weight savings and gear that holds up in the Alps, on the Via Alpina, or your local multi-day route. We've filtered out the gimmicks — what's left is what actually works.
+          </p>
+          <p lang="de">
+            Ultraleichtes Wandern bedeutet nicht billig — sondern bewusst. Jeder Gegenstand, den du trägst, muss sein Gewicht durch Funktion, Haltbarkeit oder beides rechtfertigen. Die richtige Ausrüstung lässt dich weiter gehen, schneller erholen und die Tour genießen statt bekämpfen.
+          </p>
+          <p lang="de">
+            Unsere Auswahl fokussiert auf den Sweet Spot zwischen echten Gewichtsersparnissen und Ausrüstung, die in den Alpen, auf dem Via Alpina oder deiner nächsten Mehrtagesstour standhält. Wir haben den Hype rausgefiltert — was übrig bleibt, funktioniert wirklich.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       MERCHANT STRIP
+  ============================================================ -->
+  <div class="merchants-strip">
+    <div class="container">
+      <div class="merchants-strip__inner">
+        <span class="merchants-strip__label" lang="en">Shop at</span>
+        <span class="merchants-strip__label" lang="de">Kaufen bei</span>
+        <div class="merchants-strip__list">
+          <a href="#" class="merchant-pill" rel="nofollow">Bergzeit</a>
+          <a href="#" class="merchant-pill" rel="nofollow">Mountain Warehouse</a>
+          <a href="#" class="merchant-pill" rel="nofollow">Jack Wolfskin</a>
+          <a href="#" class="merchant-pill" rel="nofollow">LOWA</a>
+          <a href="#" class="merchant-pill" rel="nofollow">Wanderschuhe.net</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       PRODUCT GRID
+  ============================================================ -->
+  <section class="products-section" aria-labelledby="products-heading">
+    <div class="container">
+
+      <div class="products-header">
+        <div>
+          <span class="section-label">
+            <span lang="en">Our Picks</span>
+            <span lang="de">Unsere Picks</span>
+          </span>
+          <h2 class="section-title" id="products-heading">
+            <span lang="en">Best Ultralight Hiking Gear</span>
+            <span lang="de">Beste Ultraleicht-Wanderausrüstung</span>
+          </h2>
+        </div>
+        <div class="sort-bar" aria-label="Sort options">
+          <span class="sort-bar__label" lang="en">Sort:</span>
+          <span class="sort-bar__label" lang="de">Sortieren:</span>
+          <button class="sort-btn is-active" lang="en">Our Pick</button>
+          <button class="sort-btn is-active" lang="de">Unsere Wahl</button>
+          <button class="sort-btn" lang="en">Lightest</button>
+          <button class="sort-btn" lang="de">Leichteste</button>
+        </div>
+      </div>
+
+      <div class="product-grid">
+
+        <!-- Product 1: Osprey Exos 38 -->
+        <article class="prod-card" aria-label="Osprey Exos 38">
+          <div class="prod-card__thumb">
+            <span class="prod-card__placeholder" aria-hidden="true">🎒</span>
+            <span class="weight-badge" aria-label="Weight: 1.06 kg">1.06 kg</span>
+            <span class="merchant-badge">Bergzeit</span>
+          </div>
+          <div class="prod-card__body">
+            <div class="prod-card__meta">
+              <span class="prod-card__brand">Osprey</span>
+              <span class="prod-card__rating" aria-label="Rating: 5 stars">★★★★★</span>
+            </div>
+            <div class="prod-card__name">Exos 38</div>
+            <p class="prod-card__tagline">
+              <span lang="en">The benchmark ultralight trail pack.</span>
+              <span lang="de">Der Maßstab unter den Ultraleicht-Trailrucksäcken.</span>
+            </p>
+            <p class="prod-card__desc">
+              <span lang="en">AirSpeed® suspended mesh back panel keeps airflow between pack and back. Integrated rain cover, roll-top lid, stow-on-the-go pole attachment. Ideal for 3-season routes up to 5 days.</span>
+              <span lang="de">Das AirSpeed®-Netzrückenpad hält Luftzirkulation zwischen Rucksack und Rücken. Integrierte Regenhülle, Roll-Top-Deckel, integrierte Stockbefestigung. Ideal für 3-Saison-Touren bis 5 Tage.</span>
+            </p>
+            <div class="prod-card__highlights">
+              <span class="highlight highlight--pro" lang="en">✓ True ultralight</span>
+              <span class="highlight highlight--pro" lang="de">✓ Echtes Ultraleicht</span>
+              <span class="highlight highlight--pro" lang="en">✓ Excellent ventilation</span>
+              <span class="highlight highlight--pro" lang="de">✓ Hervorragende Belüftung</span>
+              <span class="highlight highlight--con" lang="en">– Limited back-panel access</span>
+              <span class="highlight highlight--con" lang="de">– Kein Rückenzugang</span>
+            </div>
+            <div class="prod-card__footer">
+              <span class="prod-card__price-info" lang="en">From ~€185 · Bergzeit</span>
+              <span class="prod-card__price-info" lang="de">Ab ~185 € · Bergzeit</span>
+              <a href="#" class="prod-card__cta" rel="nofollow sponsored">
+                <span lang="en">View Deal →</span>
+                <span lang="de">Angebot →</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 2: LOWA Innox Evo GTX -->
+        <article class="prod-card" aria-label="LOWA Innox Evo GTX">
+          <div class="prod-card__thumb">
+            <span class="prod-card__placeholder" aria-hidden="true">🥾</span>
+            <span class="weight-badge" aria-label="Weight: 392 g">392 g</span>
+            <span class="merchant-badge">LOWA</span>
+          </div>
+          <div class="prod-card__body">
+            <div class="prod-card__meta">
+              <span class="prod-card__brand">LOWA</span>
+              <span class="prod-card__rating" aria-label="Rating: 5 stars">★★★★★</span>
+            </div>
+            <div class="prod-card__name">Innox Evo GTX Lo</div>
+            <p class="prod-card__tagline">
+              <span lang="en">Fast-hiker's go-to low-cut boot.</span>
+              <span lang="de">Das Fast-Hiker-Lowcut-Boot.</span>
+            </p>
+            <p class="prod-card__desc">
+              <span lang="en">Gore-Tex lining, LOWA's Monowrap frame, Vibram sole. Lightweight enough for trail running crossover, structured enough for loaded day hikes on rocky terrain.</span>
+              <span lang="de">Gore-Tex-Futter, LOWA Monowrap-Rahmen, Vibram-Sohle. Leicht genug für Trail-Running-Crossover, stabil genug für beladene Tagestouren auf felsigem Gelände.</span>
+            </p>
+            <div class="prod-card__highlights">
+              <span class="highlight highlight--pro" lang="en">✓ Gore-Tex waterproof</span>
+              <span class="highlight highlight--pro" lang="de">✓ Gore-Tex wasserdicht</span>
+              <span class="highlight highlight--pro" lang="en">✓ Excellent grip</span>
+              <span class="highlight highlight--pro" lang="de">✓ Hervorragender Grip</span>
+              <span class="highlight highlight--con" lang="en">– Runs narrow</span>
+              <span class="highlight highlight--con" lang="de">– Fällt schmal aus</span>
+            </div>
+            <div class="prod-card__footer">
+              <span class="prod-card__price-info" lang="en">From ~€135 · LOWA</span>
+              <span class="prod-card__price-info" lang="de">Ab ~135 € · LOWA</span>
+              <a href="#" class="prod-card__cta" rel="nofollow sponsored">
+                <span lang="en">View Deal →</span>
+                <span lang="de">Angebot →</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 3: Black Diamond Distance Carbon Z -->
+        <article class="prod-card" aria-label="Black Diamond Distance Carbon Z">
+          <div class="prod-card__thumb">
+            <span class="prod-card__placeholder" aria-hidden="true">🏔️</span>
+            <span class="weight-badge" aria-label="Weight: 228 g">228 g</span>
+            <span class="merchant-badge">Bergzeit</span>
+          </div>
+          <div class="prod-card__body">
+            <div class="prod-card__meta">
+              <span class="prod-card__brand">Black Diamond</span>
+              <span class="prod-card__rating" aria-label="Rating: 4 stars">★★★★☆</span>
+            </div>
+            <div class="prod-card__name">Distance Carbon Z 110</div>
+            <p class="prod-card__tagline">
+              <span lang="en">The lightest rigid Z-pole you'll actually trust.</span>
+              <span lang="de">Der leichteste starre Z-Pol, dem du wirklich vertraust.</span>
+            </p>
+            <p class="prod-card__desc">
+              <span lang="en">Carbon construction, 3-section Z-fold for ultra-compact storage in pack hip belt. FlickLock Pro adjustment. At 114 g per pole, this is as light as fixed-length carbon gets.</span>
+              <span lang="de">Carbon-Konstruktion, 3-teilige Z-Falttechnik für ultrakompakten Stauraum in der Hüfttasche. FlickLock Pro-Verstellung. Mit 114 g pro Stock so leicht wie es Carbon mit Feststecklänge gibt.</span>
+            </p>
+            <div class="prod-card__highlights">
+              <span class="highlight highlight--pro" lang="en">✓ 114 g per pole</span>
+              <span class="highlight highlight--pro" lang="de">✓ 114 g pro Stock</span>
+              <span class="highlight highlight--pro" lang="en">✓ Packs in hip belt</span>
+              <span class="highlight highlight--pro" lang="de">✓ Passt in Hüfttasche</span>
+              <span class="highlight highlight--con" lang="en">– No height adjust on Z</span>
+              <span class="highlight highlight--con" lang="de">– Keine Längenverstellung</span>
+            </div>
+            <div class="prod-card__footer">
+              <span class="prod-card__price-info" lang="en">From ~€160 · Bergzeit</span>
+              <span class="prod-card__price-info" lang="de">Ab ~160 € · Bergzeit</span>
+              <a href="#" class="prod-card__cta" rel="nofollow sponsored">
+                <span lang="en">View Deal →</span>
+                <span lang="de">Angebot →</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 4: Nemo Hornet Elite OSMO 2P -->
+        <article class="prod-card" aria-label="Nemo Hornet Elite OSMO 2P">
+          <div class="prod-card__thumb">
+            <span class="prod-card__placeholder" aria-hidden="true">⛺</span>
+            <span class="weight-badge" aria-label="Weight: 680 g">680 g</span>
+            <span class="merchant-badge">Bergzeit</span>
+          </div>
+          <div class="prod-card__body">
+            <div class="prod-card__meta">
+              <span class="prod-card__brand">NEMO</span>
+              <span class="prod-card__rating" aria-label="Rating: 5 stars">★★★★★</span>
+            </div>
+            <div class="prod-card__name">Hornet Elite OSMO 2P</div>
+            <p class="prod-card__tagline">
+              <span lang="en">680 g for a genuine 2-person shelter.</span>
+              <span lang="de">680 g für ein echtes 2-Personen-Zelt.</span>
+            </p>
+            <p class="prod-card__desc">
+              <span lang="en">OSMO fabric stays taut in rain and humidity — no saggy fly. Dual vestibules, full inner tent, two doors. Freestanding design sets up in under 3 minutes. The gold standard for 3-season ultralight camping.</span>
+              <span lang="de">OSMO-Stoff bleibt bei Regen und Feuchtigkeit straff — kein hängendes Außenzelt. Doppelte Vorzelte, volles Innenzelt, zwei Türen. Freistehende Konstruktion in unter 3 Minuten aufgebaut.</span>
+            </p>
+            <div class="prod-card__highlights">
+              <span class="highlight highlight--pro" lang="en">✓ 680 g incl. stakes</span>
+              <span class="highlight highlight--pro" lang="de">✓ 680 g inkl. Heringe</span>
+              <span class="highlight highlight--pro" lang="en">✓ Full freestanding</span>
+              <span class="highlight highlight--pro" lang="de">✓ Komplett freistehend</span>
+              <span class="highlight highlight--con" lang="en">– Premium price</span>
+              <span class="highlight highlight--con" lang="de">– Premium-Preis</span>
+            </div>
+            <div class="prod-card__footer">
+              <span class="prod-card__price-info" lang="en">From ~€550 · Bergzeit</span>
+              <span class="prod-card__price-info" lang="de">Ab ~550 € · Bergzeit</span>
+              <a href="#" class="prod-card__cta" rel="nofollow sponsored">
+                <span lang="en">View Deal →</span>
+                <span lang="de">Angebot →</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 5: Jack Wolfskin Smoozip +3 -->
+        <article class="prod-card" aria-label="Jack Wolfskin Smoozip Sleeping Bag">
+          <div class="prod-card__thumb">
+            <span class="prod-card__placeholder" aria-hidden="true">🌙</span>
+            <span class="weight-badge" aria-label="Weight: 560 g">560 g</span>
+            <span class="merchant-badge">Jack Wolfskin</span>
+          </div>
+          <div class="prod-card__body">
+            <div class="prod-card__meta">
+              <span class="prod-card__brand">Jack Wolfskin</span>
+              <span class="prod-card__rating" aria-label="Rating: 4 stars">★★★★☆</span>
+            </div>
+            <div class="prod-card__name">Smoozip +3</div>
+            <p class="prod-card__tagline">
+              <span lang="en">3-season down in a packable mummy shape.</span>
+              <span lang="de">3-Saison-Daunen in packbarer Mumienform.</span>
+            </p>
+            <p class="prod-card__desc">
+              <span lang="en">EN13537 comfort rating of +3°C, limit –3°C. 700-fill RDS-certified down, seamless baffle construction to eliminate cold spots. Packs to the size of a water bottle. Solid German brand value.</span>
+              <span lang="de">EN13537 Komforttemperatur +3 °C, Grenztemperatur –3 °C. RDS-zertifizierte 700-Füllkraft-Daunen, nahtlose Boxenverbindung ohne Kältepunkte. Packt sich zur Größe einer Wasserflasche.</span>
+            </p>
+            <div class="prod-card__highlights">
+              <span class="highlight highlight--pro" lang="en">✓ RDS certified down</span>
+              <span class="highlight highlight--pro" lang="de">✓ RDS-zertifizierte Daunen</span>
+              <span class="highlight highlight--pro" lang="en">✓ Great price/weight</span>
+              <span class="highlight highlight--pro" lang="de">✓ Super Preis-Gewicht</span>
+              <span class="highlight highlight--con" lang="en">– Limited shoulder room</span>
+              <span class="highlight highlight--con" lang="de">– Wenig Schulterraum</span>
+            </div>
+            <div class="prod-card__footer">
+              <span class="prod-card__price-info" lang="en">From ~€125 · Jack Wolfskin</span>
+              <span class="prod-card__price-info" lang="de">Ab ~125 € · Jack Wolfskin</span>
+              <a href="#" class="prod-card__cta" rel="nofollow sponsored">
+                <span lang="en">View Deal →</span>
+                <span lang="de">Angebot →</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 6: Mountain Warehouse Merino Base Layer -->
+        <article class="prod-card" aria-label="Mountain Warehouse Merino Base Layer">
+          <div class="prod-card__thumb">
+            <span class="prod-card__placeholder" aria-hidden="true">👕</span>
+            <span class="weight-badge" aria-label="Weight: 180 g">180 g</span>
+            <span class="merchant-badge">Mountain Warehouse</span>
+          </div>
+          <div class="prod-card__body">
+            <div class="prod-card__meta">
+              <span class="prod-card__brand">Mountain Warehouse</span>
+              <span class="prod-card__rating" aria-label="Rating: 4 stars">★★★★☆</span>
+            </div>
+            <div class="prod-card__name">Merino 150 Long Sleeve</div>
+            <p class="prod-card__tagline">
+              <span lang="en">Everyday merino at an accessible price point.</span>
+              <span lang="de">Alltags-Merino zu einem zugänglichen Preis.</span>
+            </p>
+            <p class="prod-card__desc">
+              <span lang="en">100% Merino wool, 150 gsm midweight. Natural odour resistance means you can wear it 3+ days on trail. Flatlock seams, no itch. The best value merino base layer for DACH hikers.</span>
+              <span lang="de">100 % Merinowolle, 150 g/m² Mittelgewicht. Natürliche Geruchsresistenz für 3+ Tage auf dem Trail. Flachnähte, kein Kratzen. Das beste Preis-Leistungs-Merino für DACH-Wanderer.</span>
+            </p>
+            <div class="prod-card__highlights">
+              <span class="highlight highlight--pro" lang="en">✓ Natural odour resist</span>
+              <span class="highlight highlight--pro" lang="de">✓ Natürliche Geruchshemmung</span>
+              <span class="highlight highlight--pro" lang="en">✓ Best price in class</span>
+              <span class="highlight highlight--pro" lang="de">✓ Bester Preis der Klasse</span>
+              <span class="highlight highlight--con" lang="en">– Pilling after heavy use</span>
+              <span class="highlight highlight--con" lang="de">– Pilling bei starker Nutzung</span>
+            </div>
+            <div class="prod-card__footer">
+              <span class="prod-card__price-info" lang="en">From ~€35 · Mountain Warehouse</span>
+              <span class="prod-card__price-info" lang="de">Ab ~35 € · Mountain Warehouse</span>
+              <a href="#" class="prod-card__cta" rel="nofollow sponsored">
+                <span lang="en">View Deal →</span>
+                <span lang="de">Angebot →</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       WHY WE RECOMMEND THESE
+  ============================================================ -->
+  <section class="why-section" aria-labelledby="why-heading">
+
+    <svg class="why-section__topo" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMid slice"
+         xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.2">
+        <path d="M -80,90  C 200,60  500,105 800,78  C 1100,51 1320,92 1520,76"/>
+        <path d="M -80,145 C 220,118 540,160 840,136 C 1140,112 1350,150 1520,134"/>
+        <path d="M -80,200 C 240,175 560,218 860,196 C 1160,174 1360,210 1520,196"/>
+        <path d="M -80,255 C 260,232 580,274 880,254 C 1180,234 1370,268 1520,256"/>
+        <path d="M -80,308 C 280,288 600,328 900,310 C 1200,292 1380,325 1520,314"/>
+      </g>
+    </svg>
+
+    <div class="container">
+      <div class="why-section__inner">
+
+        <div>
+          <div class="why-section__label">
+            <span lang="en">Our Approach</span>
+            <span lang="de">Unser Ansatz</span>
+          </div>
+          <h2 class="why-section__title" id="why-heading">
+            <span lang="en">Why These Six?</span>
+            <span lang="de">Warum diese sechs?</span>
+          </h2>
+          <div class="why-section__text">
+            <p lang="en">
+              Ultralight gear has exploded in the last decade, but most of the market is either overpriced "cottage industry" gear or underpowered budget gear that fails when it counts. Our picks sit at the intersection of genuine weight savings, real-world durability, and accessible price points — specifically for trails in the Alps and DACH region.
+            </p>
+            <p lang="de">
+              Ultraleicht-Ausrüstung hat im letzten Jahrzehnt einen Boom erlebt, aber der Großteil des Marktes ist entweder überteuerte Spezialausrüstung oder zu leichtes Budgetgear, das im entscheidenden Moment versagt. Unsere Auswahl liegt am Schnittpunkt von echten Gewichtsersparnissen, realer Haltbarkeit und erreichbaren Preisen — speziell für Trails in den Alpen und der DACH-Region.
+            </p>
+          </div>
+        </div>
+
+        <div class="why-criteria" role="list">
+
+          <div class="criterion" role="listitem">
+            <span class="criterion__num">01</span>
+            <div class="criterion__content">
+              <div class="criterion__title">
+                <span lang="en">Weight verified, not claimed</span>
+                <span lang="de">Gewicht verifiziert, nicht behauptet</span>
+              </div>
+              <p class="criterion__desc">
+                <span lang="en">We cross-reference manufacturer specs with third-party weigh-ins. Every weight badge on this page is accurate.</span>
+                <span lang="de">Wir gleichen Herstellerangaben mit Drittpartei-Wiegemessungen ab. Jedes Gewichts-Badge auf dieser Seite ist korrekt.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="criterion" role="listitem">
+            <span class="criterion__num">02</span>
+            <div class="criterion__content">
+              <div class="criterion__title">
+                <span lang="en">Available in DACH — with German support</span>
+                <span lang="de">In DACH verfügbar — mit deutschem Support</span>
+              </div>
+              <p class="criterion__desc">
+                <span lang="en">We only recommend gear purchasable from EU-based merchants with German-language support and reliable return policies.</span>
+                <span lang="de">Wir empfehlen nur Ausrüstung von EU-Händlern mit deutschsprachigem Support und zuverlässiger Rückgabepolitik.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="criterion" role="listitem">
+            <span class="criterion__num">03</span>
+            <div class="criterion__content">
+              <div class="criterion__title">
+                <span lang="en">Alpine-tested durability</span>
+                <span lang="de">Alpin-getestete Haltbarkeit</span>
+              </div>
+              <p class="criterion__desc">
+                <span lang="en">Gear for Central European conditions: sudden weather changes, scree, and vertical gain. Not California weekend hiking.</span>
+                <span lang="de">Ausrüstung für mitteleuropäische Bedingungen: plötzliche Wetteränderungen, Geröll und Höhenmeter. Nicht für Wochenend-Wandern in der Ebene.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="criterion" role="listitem">
+            <span class="criterion__num">04</span>
+            <div class="criterion__content">
+              <div class="criterion__title">
+                <span lang="en">No #1 rankings — just honest recommendations</span>
+                <span lang="de">Kein „#1 Beste" — nur ehrliche Empfehlungen</span>
+              </div>
+              <p class="criterion__desc">
+                <span lang="en">We note what each item is best for and who it's wrong for. Different hikers need different gear.</span>
+                <span lang="de">Wir erklären, wofür jedes Teil am besten geeignet ist — und für wen es ungeeignet ist. Verschiedene Wanderer brauchen verschiedene Ausrüstung.</span>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <div class="footer__brand-logo">Pack<span>&</span>Wild</div>
+          <p class="footer__brand-tagline">
+            <span lang="en">Curated outdoor gear &amp; minimalist living — since 2024.</span>
+            <span lang="de">Kuratierte Outdoor-Ausrüstung &amp; minimalistisches Leben — seit 2024.</span>
+          </p>
+        </div>
+        <div class="footer__nav-grid">
+          <div>
+            <div class="footer__nav-title" lang="en">Categories</div>
+            <div class="footer__nav-title" lang="de">Kategorien</div>
+            <div class="footer__nav-links">
+              <a href="/hiking/"><span lang="en">Hiking</span><span lang="de">Wandern</span></a>
+              <a href="/vanlife/">Van Life</a>
+              <a href="/camping/">Camping</a>
+              <a href="/edc/">EDC</a>
+              <a href="/travel/"><span lang="en">Travel</span><span lang="de">Reisen</span></a>
+              <a href="/home/"><span lang="en">Home</span><span lang="de">Zuhause</span></a>
+            </div>
+          </div>
+          <div>
+            <div class="footer__nav-title" lang="en">Site</div>
+            <div class="footer__nav-title" lang="de">Seite</div>
+            <div class="footer__nav-links">
+              <a href="/about/"><span lang="en">About</span><span lang="de">Über uns</span></a>
+              <a href="/about/#disclosure"><span lang="en">Disclosure</span><span lang="de">Hinweise</span></a>
+              <a href="/privacy/"><span lang="en">Privacy</span><span lang="de">Datenschutz</span></a>
+              <a href="/imprint/"><span lang="en">Imprint</span><span lang="de">Impressum</span></a>
+            </div>
+          </div>
+          <div>
+            <div class="footer__nav-title" lang="en">Language</div>
+            <div class="footer__nav-title" lang="de">Sprache</div>
+            <div class="footer__nav-links">
+              <a href="/" onclick="setLang('en'); return true;">🇬🇧 English</a>
+              <a href="/de/" onclick="setLang('de'); return true;">🇩🇪 Deutsch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__disclosure">
+        <p lang="en">
+          <strong>Affiliate Disclosure:</strong> PackAndWild participates in affiliate advertising programs, including those of AWIN partner merchants (Bergzeit, Mountain Warehouse, Jack Wolfskin, LOWA, and others). When you click on links on this site and make a purchase, we may receive a small commission at no additional cost to you. This helps us keep our content free and our recommendations independent. We only recommend products we have genuinely researched.
+        </p>
+        <p lang="de">
+          <strong>Affiliate-Hinweis:</strong> PackAndWild nimmt an Affiliate-Werbeprogrammen teil, unter anderem von AWIN-Partnerhändlern (Bergzeit, Mountain Warehouse, Jack Wolfskin, LOWA u. a.). Wenn du auf Links auf dieser Website klickst und einen Kauf tätigst, erhalten wir möglicherweise eine kleine Provision ohne zusätzliche Kosten für dich. Dies hilft uns, unsere Inhalte kostenlos zu halten und unsere Empfehlungen unabhängig zu gestalten.
+        </p>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__copy">
+          <span lang="en">© 2024 PackAndWild. All rights reserved.</span>
+          <span lang="de">© 2024 PackAndWild. Alle Rechte vorbehalten.</span>
+        </span>
+        <nav class="footer__legal" aria-label="Legal">
+          <a href="/privacy/"><span lang="en">Privacy</span><span lang="de">Datenschutz</span></a>
+          <a href="/imprint/"><span lang="en">Imprint</span><span lang="de">Impressum</span></a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    function setLang(lang) {
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.setAttribute('lang', lang);
+      const btnEn = document.getElementById('btn-en');
+      const btnDe = document.getElementById('btn-de');
+      if (lang === 'en') {
+        btnEn.classList.add('is-active');
+        btnDe.classList.remove('is-active');
+      } else {
+        btnDe.classList.add('is-active');
+        btnEn.classList.remove('is-active');
+      }
+      try { localStorage.setItem('paw-lang', lang); } catch(e) {}
+    }
+
+    (function() {
+      try {
+        const saved = localStorage.getItem('paw-lang');
+        if (saved === 'de') setLang('de');
+      } catch(e) {}
+    })();
+
+    const hamburger = document.getElementById('hamburger');
+    const drawer    = document.getElementById('nav-drawer');
+    hamburger.addEventListener('click', function() {
+      const isOpen = drawer.classList.toggle('is-open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+    drawer.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        drawer.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.addEventListener('click', function(e) {
+      if (!hamburger.contains(e.target) && !drawer.contains(e.target)) {
+        drawer.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+
+</body>
+</html>
