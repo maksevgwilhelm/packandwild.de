@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#1B2B1F"/>
+  <!-- P&W monogram -->
+  <text x="4" y="23" font-family="Georgia, serif" font-size="18" font-weight="700" fill="#F4EFE6" letter-spacing="-1">P</text>
+  <text x="14" y="23" font-family="Georgia, serif" font-size="14" font-weight="400" fill="#6A9460">&amp;</text>
+  <text x="20" y="23" font-family="Georgia, serif" font-size="18" font-weight="700" fill="#F4EFE6">W</text>
+</svg>

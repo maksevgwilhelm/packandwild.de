@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://packandwild.de/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://packandwild.de/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://packandwild.de/de/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://packandwild.de/hiking/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://packandwild.de/hiking/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://packandwild.de/de/wandern/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://packandwild.de/vanlife/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://packandwild.de/vanlife/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://packandwild.de/de/vanlife/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://packandwild.de/camping/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://packandwild.de/camping/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://packandwild.de/de/camping/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://packandwild.de/edc/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://packandwild.de/edc/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://packandwild.de/de/edc/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://packandwild.de/travel/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://packandwild.de/travel/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://packandwild.de/de/reisen/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://packandwild.de/home/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://packandwild.de/home/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://packandwild.de/de/zuhause/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://packandwild.de/about/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://packandwild.de/imprint/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <url>
+    <loc>https://packandwild.de/privacy/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+</urlset>

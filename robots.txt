@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://packandwild.de/sitemap.xml

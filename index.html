@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"><link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PackAndWild — Curated Gear for Minimalist Adventurers</title>
   <meta name="description" content="Curated outdoor gear for ultralight hikers, van lifers, and minimalist adventurers. Less weight, better choices, more trail.">
@@ -10,10 +10,7 @@
   <link rel="alternate" hreflang="en" href="https://packandwild.de/">
   <link rel="alternate" hreflang="de" href="https://packandwild.de/de/">
   <link rel="alternate" hreflang="x-default" href="https://packandwild.de/">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/fonts/fonts.css">
 
   <style>
     /* ============================================================
@@ -770,6 +767,18 @@
     }
     .footer__legal a:hover { color: rgba(244,239,230,0.7); }
   </style>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://packandwild.de/">
+  <meta property="og:site_name" content="PackAndWild">
+  <meta property="og:title" content="PackAndWild — Curated Outdoor & Minimalist Living Gear">
+  <meta property="og:description" content="Expert-curated outdoor gear, van life essentials, EDC, and minimalist home picks. Weight-rated, EU-shipped, affiliate-free opinions.">
+  <meta property="og:image" content="https://packandwild.de/img/og-home.jpg">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PackAndWild — Curated Outdoor & Minimalist Living Gear">
+  <meta name="twitter:description" content="Expert-curated outdoor gear, van life essentials, EDC, and minimalist home picks. Weight-rated, EU-shipped, affiliate-free opinions.">
+  <meta name="twitter:image" content="https://packandwild.de/img/og-home.jpg">
 </head>
 
 <body>
@@ -913,17 +922,17 @@
 
 
   <!-- ============================================================
-       AFFILIATE DISCLOSURE BAR
+       CONTENT DISCOVERY BAR
   ============================================================ -->
   <div class="disclosure-bar" role="note">
     <div class="container">
       <p lang="en">
-        <strong>Affiliate Disclosure:</strong> PackAndWild uses affiliate links. We may earn a small commission when you purchase through our links — at no extra cost to you.
-        <a href="/about/#disclosure">Learn more</a>
+        Curated gear content — no active affiliate links on this site yet.
+        Find our daily picks on <a href="https://www.pinterest.com/packandwild/" target="_blank" rel="noopener noreferrer">Pinterest →</a>
       </p>
       <p lang="de">
-        <strong>Affiliate-Hinweis:</strong> PackAndWild verwendet Affiliate-Links. Beim Kauf über unsere Links erhalten wir eine kleine Provision — ohne Mehrkosten für dich.
-        <a href="/de/ueber-uns/#disclosure">Mehr erfahren</a>
+        Kuratierte Gear-Inhalte — noch keine aktiven Affiliate-Links auf dieser Seite.
+        Unsere täglichen Picks findest du auf <a href="https://www.pinterest.com/packandwild/" target="_blank" rel="noopener noreferrer">Pinterest →</a>
       </p>
     </div>
   </div>
@@ -1236,10 +1245,17 @@
           </div>
         </div>
 
-        <a href="/about/" class="btn btn--ghost">
-          <span lang="en">Our Story →</span>
-          <span lang="de">Unsere Geschichte →</span>
-        </a>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+          <a href="/about/" class="btn btn--ghost">
+            <span lang="en">Our Story →</span>
+            <span lang="de">Unsere Geschichte →</span>
+          </a>
+          <a href="https://www.pinterest.com/packandwild/" target="_blank" rel="noopener noreferrer" class="btn" style="background:#E60023;color:#fff;display:inline-flex;align-items:center;gap:.5rem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+            <span lang="en">Follow on Pinterest</span>
+            <span lang="de">Pinterest folgen</span>
+          </a>
+        </div>
 
       </div>
     </div>
@@ -1282,6 +1298,7 @@
             <div class="footer__nav-title" lang="de">Seite</div>
             <div class="footer__nav-links">
               <a href="/about/"><span lang="en">About Us</span><span lang="de">Über uns</span></a>
+              <a href="https://www.pinterest.com/packandwild/" target="_blank" rel="noopener noreferrer">Pinterest ↗</a>
               <a href="/about/#disclosure"><span lang="en">Disclosure</span><span lang="de">Hinweise</span></a>
               <a href="/privacy/"><span lang="en">Privacy Policy</span><span lang="de">Datenschutz</span></a>
               <a href="/imprint/"><span lang="en">Imprint</span><span lang="de">Impressum</span></a>
@@ -1301,17 +1318,17 @@
 
       <div class="footer__disclosure">
         <p lang="en">
-          <strong>Affiliate Disclosure:</strong> PackAndWild participates in affiliate advertising programs, including those of AWIN partner merchants. When you click on links on this site and make a purchase, we may receive a small commission at no additional cost to you. This helps us keep our content free and our recommendations independent. We only recommend products we have genuinely researched and believe in.
+          PackAndWild is an independent curated content project. This site currently contains no active affiliate links — product links are placeholders only. Our Pinterest profile may include affiliate links; those are marked where required. <a href="/about/#disclosure" style="color:rgba(244,239,230,.45);text-decoration:underline">Disclosure policy →</a>
         </p>
         <p lang="de">
-          <strong>Affiliate-Hinweis:</strong> PackAndWild nimmt an Affiliate-Werbeprogrammen teil, unter anderem von AWIN-Partnerhändlern. Wenn du auf Links auf dieser Website klickst und einen Kauf tätigst, erhalten wir möglicherweise eine kleine Provision ohne zusätzliche Kosten für dich. Dies hilft uns, unsere Inhalte kostenlos zu halten und unsere Empfehlungen unabhängig zu gestalten. Wir empfehlen nur Produkte, die wir wirklich recherchiert haben und von denen wir überzeugt sind.
+          PackAndWild ist ein unabhängiges, kuratiertes Contentprojekt. Diese Website enthält derzeit keine aktiven Affiliate-Links — Produkt-Links sind nur Platzhalter. Unser Pinterest-Profil kann Affiliate-Links enthalten; diese werden dort entsprechend gekennzeichnet. <a href="/about/#disclosure" style="color:rgba(244,239,230,.45);text-decoration:underline">Offenlegung →</a>
         </p>
       </div>
 
       <div class="footer__bottom">
         <span class="footer__copy">
-          <span lang="en">© 2024 PackAndWild. All rights reserved.</span>
-          <span lang="de">© 2024 PackAndWild. Alle Rechte vorbehalten.</span>
+          <span lang="en">© 2026 PackAndWild. All rights reserved.</span>
+          <span lang="de">© 2026 PackAndWild. Alle Rechte vorbehalten.</span>
         </span>
         <nav class="footer__legal" aria-label="Legal links">
           <a href="/privacy/"><span lang="en">Privacy</span><span lang="de">Datenschutz</span></a>

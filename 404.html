@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — PackAndWild</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <style>
+    :root{--forest:#1B2B1F;--forest-deep:#131F16;--sage:#4A6741;--sage-light:#6A9460;--cream:#F4EFE6;--white:#FAFAF8;--slate:#5C6B7A;--font-display:'Playfair Display',Georgia,serif;--font-body:'Inter',system-ui,sans-serif}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font-body);background:var(--cream);color:var(--forest);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;-webkit-font-smoothing:antialiased}
+    html[data-lang="en"] [lang="de"]{display:none!important}html[data-lang="de"] [lang="en"]{display:none!important}
+    .logo{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--forest);letter-spacing:-.02em;margin-bottom:3rem;text-decoration:none}
+    .logo span{color:var(--sage-light)}
+    .code{font-family:var(--font-display);font-size:6rem;font-weight:700;color:var(--sage-light);line-height:1;margin-bottom:1rem;opacity:.4}
+    h1{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;color:var(--forest);margin-bottom:1rem;letter-spacing:-.02em}
+    p{font-size:.95rem;color:var(--slate);line-height:1.7;max-width:420px;font-weight:300;margin-bottom:2.5rem}
+    .actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+    .btn{padding:.75rem 1.5rem;font-family:var(--font-body);font-size:.88rem;font-weight:600;border-radius:4px;text-decoration:none;transition:background .2s}
+    .btn--primary{background:var(--forest);color:var(--cream)}.btn--primary:hover{background:var(--sage)}
+    .btn--ghost{background:transparent;color:var(--forest);border:1px solid rgba(27,43,31,.2)}.btn--ghost:hover{border-color:var(--sage);color:var(--sage)}
+  </style>
+</head>
+<body>
+  <a href="/" class="logo">Pack<span>&</span>Wild</a>
+  <div class="code">404</div>
+  <h1><span lang="en">Page not found</span><span lang="de">Seite nicht gefunden</span></h1>
+  <p><span lang="en">The page you're looking for doesn't exist or has been moved. Head back to the homepage or explore a category.</span><span lang="de">Die gesuchte Seite existiert nicht oder wurde verschoben. Zurück zur Startseite oder eine Kategorie erkunden.</span></p>
+  <div class="actions">
+    <a href="/" class="btn btn--primary"><span lang="en">← Back to Homepage</span><span lang="de">← Zur Startseite</span></a>
+    <a href="/hiking/" class="btn btn--ghost"><span lang="en">Hiking Gear</span><span lang="de">Wanderausrüstung</span></a>
+  </div>
+  <script>
+    function setLang(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l);try{localStorage.setItem('paw-lang',l)}catch(e){}}
+    (function(){try{var s=localStorage.getItem('paw-lang');if(s==='de')setLang('de')}catch(e){}})();
+  </script>
+</body>
+</html>
